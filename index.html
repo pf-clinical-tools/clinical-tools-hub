@@ -51,7 +51,7 @@
     color: #333;
   }
 
-  /* Single source of truth for ALL hub buttons */
+  /* ✅ Single source of truth for ALL tool buttons */
   .tool a {
     display: inline-block;
     padding: 10px 16px;
@@ -124,7 +124,12 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     echocardiographic parameters, with emphasis on <strong>confidence estimation and clinical context</strong>.
     Intended for clinicians assessing unexplained dyspnoea or suspected heart failure.
   </p>
-  <a href="https://pf-clinical-tools.github.io/diastolic-dysfunction/" target="_blank" rel="noopener">
+
+  <!-- ✅ Force “new tab/external browser” reliably (esp. iPhone Home Screen mode) -->
+  <a id="diastolicLink"
+     href="https://pf-clinical-tools.github.io/diastolic-dysfunction/"
+     target="_blank"
+     rel="noopener">
     Open Diastolic Dysfunction Assessment Tool
   </a>
 </div>
@@ -200,5 +205,29 @@ Clinical Decision Support Tools – Hub v1.1<br>
 </footer>
 
 </div>
+
+<script>
+/*
+  iOS “Add to Home Screen” (standalone) mode may ignore target="_blank"
+  and open links in the same web-app view. This click handler forces an
+  external open (usually Safari) in those cases, without affecting desktop.
+*/
+(function(){
+  const a = document.getElementById("diastolicLink");
+  if(!a) return;
+
+  a.addEventListener("click", function(e){
+    const url = a.href;
+    // Attempt to force an external/new context open
+    // (works better than relying on target=_blank in iOS standalone mode)
+    const w = window.open(url, "_blank", "noopener");
+    if(w){
+      e.preventDefault();
+    }
+    // If blocked by popup rules, the normal navigation will still occur.
+  });
+})();
+</script>
+
 </body>
 </html>
