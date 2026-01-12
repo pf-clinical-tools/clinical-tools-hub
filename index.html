@@ -51,6 +51,7 @@
     color: #333;
   }
 
+  /* ✅ Single source of truth for ALL tool buttons */
   .tool a {
     display: inline-block;
     padding: 10px 16px;
@@ -90,19 +91,6 @@
     color: #666;
     text-align: center;
   }
-  /* Clean tool button for hub links */
-.tool-btn{
-  display:inline-block;
-  padding:12px 16px;
-  border-radius:10px;
-  background:#0d6efd;
-  color:#fff !important;
-  text-decoration:none !important;
-  font-weight:700;
-  border:1px solid rgba(0,0,0,.08);
-}
-.tool-btn:hover{ filter:brightness(0.95); }
-.tool-btn:active{ transform:translateY(1px); }
 </style>
 </head>
 
@@ -124,11 +112,10 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     <strong>non-valvular atrial fibrillation</strong>, using structured, guideline-aligned prompts.
     Designed to support balanced, conservative decision-making where bleeding risk or uncertainty exists.
   </p>
-  <a href="https://pf-clinical-tools.github.io/nvaf-anticoagulation/" target="_blank">
+  <a href="https://pf-clinical-tools.github.io/nvaf-anticoagulation/" target="_blank" rel="noopener">
     Open Anticoagulation Risk Assessment Tool (NVAF)
   </a>
 </div>
-
 
 <div class="tool">
   <h2>2. Bedside Diastolic Dysfunction Assessment Tool</h2>
@@ -137,7 +124,8 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     echocardiographic parameters, with emphasis on <strong>confidence estimation and clinical context</strong>.
     Intended for clinicians assessing unexplained dyspnoea or suspected heart failure.
   </p>
-  <a class="btn btn-primary" href="/diastolic-dysfunction/">Open Diastolic Dysfunction Assessment Tool</a>
+  <a href="https://pf-clinical-tools.github.io/diastolic-dysfunction/" target="_blank" rel="noopener">
+    Open Diastolic Dysfunction Assessment Tool
   </a>
 </div>
 
@@ -148,7 +136,7 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     catheterisation and <strong>trial without catheter (TWOC)</strong> in patients with femoral or pelvic fractures.
     Focuses on minimising unnecessary catheter use while reducing catheter-associated harm.
   </p>
-  <a href="https://pf-clinical-tools.github.io/catheter-twoc-femoral-pelvic/" target="_blank">
+  <a href="https://pf-clinical-tools.github.io/catheter-twoc-femoral-pelvic/" target="_blank" rel="noopener">
     Open Catheterisation &amp; TWOC Decision Aid
   </a>
 </div>
@@ -160,7 +148,7 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     in patients with acute pulmonary embolism or deep vein thrombosis who require urgent femoral fracture surgery.
     Designed to support multidisciplinary peri-operative decision-making.
   </p>
-  <a href="PASTE_PEDVT_TOOL_LINK_HERE" target="_blank">
+  <a href="PASTE_PEDVT_TOOL_LINK_HERE" target="_blank" rel="noopener">
     Open Peri-operative PE / DVT Decision Support Tool
   </a>
 </div>
@@ -172,24 +160,27 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     and appropriate clinical use.
   </p>
   <ul>
-      <li>
-    <strong>Anticoagulation Risk Assessment Tool in NVAF (v1.2)</strong><br>
-    <a href="governance/nvaf-executive-summary-v1.2.html" target="_blank">
-      Executive Summary (v1.2 — prepared for review)
-    </a>
-    &nbsp;|&nbsp;
-    <a href="governance/nvaf-governance-evidence-v1.2.html" target="_blank">
-      Governance &amp; Evidence (v1.2 — prepared for review)
-    </a>
-  </li>
-    <li><strong>Bedside Diastolic Dysfunction Assessment Tool</strong> — Methods &amp; references (to be added)</li>
     <li>
-  <strong>Peri-operative Catheterisation and TWOC Decision Aid<br>
-  (Femoral and Pelvic Fracture Patients)</strong><br>
-  <a href="governance/catheter-governance-v1.1.1.html" target="_blank">
-    Governance, Evidence &amp; Methods (v1.1.1 — prepared for review)
-  </a>
-</li>
+      <strong>Anticoagulation Risk Assessment Tool in NVAF (v1.2)</strong><br>
+      <a href="governance/nvaf-executive-summary-v1.2.html" target="_blank" rel="noopener">
+        Executive Summary (v1.2 — prepared for review)
+      </a>
+      &nbsp;|&nbsp;
+      <a href="governance/nvaf-governance-evidence-v1.2.html" target="_blank" rel="noopener">
+        Governance &amp; Evidence (v1.2 — prepared for review)
+      </a>
+    </li>
+
+    <li><strong>Bedside Diastolic Dysfunction Assessment Tool</strong> — Methods &amp; references (to be added)</li>
+
+    <li>
+      <strong>Peri-operative Catheterisation and TWOC Decision Aid<br>
+      (Femoral and Pelvic Fracture Patients)</strong><br>
+      <a href="governance/catheter-governance-v1.1.1.html" target="_blank" rel="noopener">
+        Governance, Evidence &amp; Methods (v1.1.1 — prepared for review)
+      </a>
+    </li>
+
     <li><strong>Peri-operative PE / DVT Management Decision Support Tool</strong> — Evidence summary &amp; references (to be added)</li>
   </ul>
 </div>
