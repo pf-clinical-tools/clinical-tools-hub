@@ -51,7 +51,7 @@
     color: #333;
   }
 
-  /* ✅ Single source of truth for ALL tool buttons */
+  /* Single source of truth for ALL hub buttons */
   .tool a {
     display: inline-block;
     padding: 10px 16px;
@@ -112,7 +112,9 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     <strong>non-valvular atrial fibrillation</strong>, using structured, guideline-aligned prompts.
     Designed to support balanced, conservative decision-making where bleeding risk or uncertainty exists.
   </p>
-  <a href="https://pf-clinical-tools.github.io/nvaf-anticoagulation/" target="_blank" rel="noopener">
+  <a class="tool-link"
+     href="https://pf-clinical-tools.github.io/nvaf-anticoagulation/"
+     data-url="https://pf-clinical-tools.github.io/nvaf-anticoagulation/">
     Open Anticoagulation Risk Assessment Tool (NVAF)
   </a>
 </div>
@@ -124,12 +126,9 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     echocardiographic parameters, with emphasis on <strong>confidence estimation and clinical context</strong>.
     Intended for clinicians assessing unexplained dyspnoea or suspected heart failure.
   </p>
-
-  <!-- ✅ Force “new tab/external browser” reliably (esp. iPhone Home Screen mode) -->
-  <a id="diastolicLink"
+  <a class="tool-link"
      href="https://pf-clinical-tools.github.io/diastolic-dysfunction/"
-     target="_blank"
-     rel="noopener">
+     data-url="https://pf-clinical-tools.github.io/diastolic-dysfunction/">
     Open Diastolic Dysfunction Assessment Tool
   </a>
 </div>
@@ -141,7 +140,9 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     catheterisation and <strong>trial without catheter (TWOC)</strong> in patients with femoral or pelvic fractures.
     Focuses on minimising unnecessary catheter use while reducing catheter-associated harm.
   </p>
-  <a href="https://pf-clinical-tools.github.io/catheter-twoc-femoral-pelvic/" target="_blank" rel="noopener">
+  <a class="tool-link"
+     href="https://pf-clinical-tools.github.io/catheter-twoc-femoral-pelvic/"
+     data-url="https://pf-clinical-tools.github.io/catheter-twoc-femoral-pelvic/">
     Open Catheterisation &amp; TWOC Decision Aid
   </a>
 </div>
@@ -153,7 +154,9 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     in patients with acute pulmonary embolism or deep vein thrombosis who require urgent femoral fracture surgery.
     Designed to support multidisciplinary peri-operative decision-making.
   </p>
-  <a href="PASTE_PEDVT_TOOL_LINK_HERE" target="_blank" rel="noopener">
+  <a class="tool-link"
+     href="PASTE_PEDVT_TOOL_LINK_HERE"
+     data-url="PASTE_PEDVT_TOOL_LINK_HERE">
     Open Peri-operative PE / DVT Decision Support Tool
   </a>
 </div>
@@ -208,23 +211,31 @@ Clinical Decision Support Tools – Hub v1.1<br>
 
 <script>
 /*
-  iOS “Add to Home Screen” (standalone) mode may ignore target="_blank"
-  and open links in the same web-app view. This click handler forces an
-  external open (usually Safari) in those cases, without affecting desktop.
+  Option B: Force new-tab behaviour on desktop by handling clicks.
+  - Keeps href as fallback (so hub never “breaks”).
+  - Uses window.open() in direct user click context.
 */
-(function(){
-  const a = document.getElementById("diastolicLink");
-  if(!a) return;
-
-  a.addEventListener("click", function(e){
-    const url = a.href;
-    // Attempt to force an external/new context open
-    // (works better than relying on target=_blank in iOS standalone mode)
+(function () {
+  function openInNewTab(url) {
+    // Use noopener for safety. Some browsers ignore the 3rd argument.
     const w = window.open(url, "_blank", "noopener");
-    if(w){
-      e.preventDefault();
-    }
-    // If blocked by popup rules, the normal navigation will still occur.
+    return !!w;
+  }
+
+  document.querySelectorAll("a.tool-link").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      const url = a.getAttribute("data-url") || a.href;
+      if (!url || url === "#") return;
+
+      // If placeholder remains, allow default so you notice it.
+      if (url.indexOf("PASTE_") === 0) return;
+
+      const ok = openInNewTab(url);
+
+      // If window.open succeeded, prevent same-tab navigation.
+      // If blocked by a popup blocker, fallback to normal navigation.
+      if (ok) e.preventDefault();
+    });
   });
 })();
 </script>
