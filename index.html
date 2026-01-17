@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <title>Clinical Decision Support Tools</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- HUB_MARKER_2026_01_17_B -->
+
+<!-- HUB_TRUST_SAFE_V1_2_2026_01_17 -->
 
 <style>
   body {
@@ -30,7 +31,7 @@
     background: #fff3cd;
     border-left: 5px solid #ffcc00;
     padding: 12px 15px;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     font-size: 0.95em;
   }
 
@@ -52,8 +53,8 @@
     color: #333;
   }
 
-  /* Single source of truth for ALL hub buttons */
-  .tool a {
+  /* Tool links styled as buttons (no popups, Trust-safe) */
+  .tool a.toolbtn {
     display: inline-block;
     padding: 10px 16px;
     background: #005eb8;
@@ -63,7 +64,7 @@
     font-weight: 500;
   }
 
-  .tool a:hover {
+  .tool a.toolbtn:hover {
     background: #003f87;
   }
 
@@ -78,6 +79,16 @@
   .section h2 {
     font-size: 1.2em;
     margin-top: 0;
+  }
+
+  .section a {
+    color: #005eb8;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .section a:hover {
+    text-decoration: underline;
   }
 
   .notes {
@@ -113,24 +124,21 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     <strong>non-valvular atrial fibrillation</strong>, using structured, guideline-aligned prompts.
     Designed to support balanced, conservative decision-making where bleeding risk or uncertainty exists.
   </p>
-  <a class="tool-link"
-     href="https://pf-clinical-tools.github.io/nvaf-anticoagulation/"
-     data-url="https://pf-clinical-tools.github.io/nvaf-anticoagulation/">
+  <a class="toolbtn" href="https://pf-clinical-tools.github.io/nvaf-anticoagulation/">
     Open Anticoagulation Risk Assessment Tool (NVAF)
   </a>
 </div>
 
 <div class="tool">
-  <h2>2. Bedside Diastolic Dysfunction Assessment Tool</h2>
+  <h2>2. Clinical Interpretation of Diastolic Function in Suspected Heart Failure</h2>
   <p>
-    Provides a structured bedside approach to <strong>grading diastolic dysfunction</strong> using standard
-    echocardiographic parameters, with emphasis on <strong>confidence estimation and clinical context</strong>.
-    Intended for clinicians assessing unexplained dyspnoea or suspected heart failure.
+    Provides a clinician-led interpretative framework for <strong>assessing diastolic function</strong> in patients with
+    <strong>suspected heart failure</strong>, particularly where echocardiographic parameters are
+    <strong>incomplete, discordant, or obtained under non-ideal conditions</strong>.
+    Emphasises <strong>clinical context, probability, and confidence</strong> rather than rigid grading.
   </p>
-  <a class="tool-link"
-     href="https://pf-clinical-tools.github.io/diastolic-dysfunction/"
-     data-url="https://pf-clinical-tools.github.io/diastolic-dysfunction/">
-    Open Diastolic Dysfunction Assessment Tool
+  <a class="toolbtn" href="https://pf-clinical-tools.github.io/diastolic-dysfunction/">
+    Open Clinical Interpretation of Diastolic Function Tool
   </a>
 </div>
 
@@ -141,9 +149,7 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     catheterisation and <strong>trial without catheter (TWOC)</strong> in patients with femoral or pelvic fractures.
     Focuses on minimising unnecessary catheter use while reducing catheter-associated harm.
   </p>
-  <a class="tool-link"
-     href="https://pf-clinical-tools.github.io/catheter-twoc-femoral-pelvic/"
-     data-url="https://pf-clinical-tools.github.io/catheter-twoc-femoral-pelvic/">
+  <a class="toolbtn" href="https://pf-clinical-tools.github.io/catheter-twoc-femoral-pelvic/">
     Open Catheterisation &amp; TWOC Decision Aid
   </a>
 </div>
@@ -155,47 +161,34 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
     in patients with acute pulmonary embolism or deep vein thrombosis who require urgent femoral fracture surgery.
     Designed to support multidisciplinary peri-operative decision-making.
   </p>
-  <a class="tool-link"
-     href="PASTE_PEDVT_TOOL_LINK_HERE"
-     data-url="PASTE_PEDVT_TOOL_LINK_HERE">
+  <a class="toolbtn" href="PASTE_PEDVT_TOOL_LINK_HERE">
     Open Peri-operative PE / DVT Decision Support Tool
   </a>
 </div>
 
 <div class="section">
   <h2>Governance &amp; Evidence</h2>
-  <p>
-    Governance documents and evidence summaries will be made available here to support transparency, audit,
-    and appropriate clinical use.
-  </p>
   <ul>
     <li>
       <strong>Anticoagulation Risk Assessment Tool in NVAF (v1.2)</strong><br>
-      <a href="governance/nvaf-executive-summary-v1.2.html" target="_blank" rel="noopener">
-        Executive Summary (v1.2 — prepared for review)
-      </a>
+      <a href="governance/nvaf-executive-summary-v1.2.html">Executive Summary</a>
       &nbsp;|&nbsp;
-      <a href="governance/nvaf-governance-evidence-v1.2.html" target="_blank" rel="noopener">
-        Governance &amp; Evidence (v1.2 — prepared for review)
-      </a>
+      <a href="governance/nvaf-governance-evidence-v1.2.html">Governance &amp; Evidence</a>
     </li>
 
-    <li>
-  <strong>Bedside Diastolic Dysfunction Assessment Tool</strong><br>
-  <a href="governance/diastolic-dysfunction-governance-v1.0.html" target="_blank" rel="noopener">
-    Governance, Methods &amp; Evidence (v1.0 — locked)
-  </a>
-</li>
-
-    <li>
-      <strong>Peri-operative Catheterisation and TWOC Decision Aid<br>
-      (Femoral and Pelvic Fracture Patients)</strong><br>
-      <a href="governance/catheter-governance-v1.1.1.html" target="_blank" rel="noopener">
-        Governance, Evidence &amp; Methods (v1.1.1 — prepared for review)
-      </a>
+    <li style="margin-top:10px;">
+      <strong>Clinical Interpretation of Diastolic Function in Suspected Heart Failure</strong><br>
+      <a href="governance/diastolic-dysfunction-governance-v1.0.html">Governance, Methods &amp; Evidence (locked)</a>
     </li>
 
-    <li><strong>Peri-operative PE / DVT Management Decision Support Tool</strong> — Evidence summary &amp; references (to be added)</li>
+    <li style="margin-top:10px;">
+      <strong>Peri-operative Catheterisation and TWOC Decision Aid (Femoral and Pelvic Fracture Patients)</strong><br>
+      <a href="governance/catheter-governance-v1.1.1.html">Governance, Evidence &amp; Methods (v1.1.1)</a>
+    </li>
+
+    <li style="margin-top:10px;">
+      <strong>Peri-operative PE / DVT Management Decision Support Tool</strong> — Evidence summary &amp; references (to be added)
+    </li>
   </ul>
 </div>
 
@@ -204,47 +197,15 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
 <ul>
   <li>All tools are clinician-facing</li>
   <li>Language and thresholds are intentionally conservative</li>
-  <li>Mixed or uncertain findings should prompt senior review or specialist input</li>
+  <li>Uncertainty should prompt senior review or specialist input</li>
 </ul>
 </div>
 
 <footer>
-Clinical Decision Support Tools – Hub v1.1<br>
+Clinical Decision Support Tools – Hub v1.2 (Trust-safe)<br>
 © Dr Prabhath Fernando MBBS MD FRCP
 </footer>
 
 </div>
-
-<script>
-/*
-  Option B: Force new-tab behaviour on desktop by handling clicks.
-  - Keeps href as fallback (so hub never “breaks”).
-  - Uses window.open() in direct user click context.
-*/
-(function () {
-  function openInNewTab(url) {
-    // Use noopener for safety. Some browsers ignore the 3rd argument.
-    const w = window.open(url, "_blank", "noopener");
-    return !!w;
-  }
-
-  document.querySelectorAll("a.tool-link").forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      const url = a.getAttribute("data-url") || a.href;
-      if (!url || url === "#") return;
-
-      // If placeholder remains, allow default so you notice it.
-      if (url.indexOf("PASTE_") === 0) return;
-
-      const ok = openInNewTab(url);
-
-      // If window.open succeeded, prevent same-tab navigation.
-      // If blocked by a popup blocker, fallback to normal navigation.
-      if (ok) e.preventDefault();
-    });
-  });
-})();
-</script>
-
 </body>
 </html>
