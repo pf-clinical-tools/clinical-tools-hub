@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>NVAF Anticoagulation Risk Assessment Tool – Governance Rationale, Evidence Base, and Intended Use (v1.3 FINAL)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+<style>
+  :root{
+    --bg:#f6f7f9;
+    --card:#ffffff;
+    --text:#111827;
+    --muted:#4b5563;
+    --border:#e5e7eb;
+    --accent:#2563eb;
+    --soft:#eff6ff;
+    --shadow:0 10px 28px rgba(0,0,0,0.08);
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    line-height:1.6;
+  }
+  .wrap{
+    max-width: 920px;
+    margin: 22px auto;
+    padding: 0 14px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    box-shadow:var(--shadow);
+    padding: 22px 22px 18px;
+  }
+  h1{
+    margin:0 0 8px;
+    font-size:1.9rem;
+    letter-spacing:-0.2px;
+  }
+  .subtitle{
+    margin:0 0 18px;
+    color:var(--muted);
+    font-size:0.98rem;
+  }
+  .meta{
+    background: var(--soft);
+    border-left: 4px solid var(--accent);
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin: 14px 0 18px;
+    color: var(--text);
+    font-size: 0.98rem;
+  }
+  .meta strong{ font-weight:700; }
+  h2{
+    margin: 26px 0 10px;
+    font-size: 1.25rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+  }
+  h3{
+    margin: 18px 0 6px;
+    font-size: 1.05rem;
+  }
+  p{ margin: 10px 0; }
+  ul{ margin: 8px 0 8px 20px; }
+  li{ margin: 4px 0; }
+  .callout{
+    background:#fff7ed;
+    border-left:4px solid #d97706;
+    padding: 12px 14px;
+    border-radius:10px;
+    margin: 14px 0;
+    color:#111827;
+    font-size:0.96rem;
+  }
+  .small{
+    color:var(--muted);
+    font-size:0.92rem;
+  }
+  hr{
+    border:0;
+    border-top:1px dashed var(--border);
+    margin: 18px 0;
+  }
+  .refs{
+    padding-left: 20px;
+  }
+  .refs li{
+    margin: 8px 0;
+  }
+  footer{
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+  sup{ font-size:0.75em; }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+
+      <h1>NVAF Anticoagulation Risk Assessment Tool</h1>
+      <p class="subtitle">Governance Rationale, Evidence Base, and Intended Use</p>
+
+      <div class="meta">
+        <div><strong>Author:</strong> Dr Prabhath Fernando MBBS MD FRCP</div>
+        <div><strong>Associated digital tool:</strong> <strong>NVAF Anticoagulation Risk Assessment Tool (v1.3 FINAL)</strong></div>
+        <div><strong>Intended setting:</strong> NHS secondary care and community practice</div>
+        <div><strong>Intended users:</strong> Clinicians involved in the management of atrial fibrillation</div>
+      </div>
+
+      <h2>1. Purpose and Scope</h2>
+
+      <p>
+        This document describes the clinical rationale, evidence base, governance considerations, and intended use of the
+        NVAF Anticoagulation Risk Assessment Tool.
+      </p>
+
+      <p>
+        The tool is designed to support clinicians in balancing stroke prevention and bleeding risk when considering oral
+        anticoagulation (OAC) in patients with NVAF, particularly in older adults and those with frailty or comorbidity.
+      </p>
+
+      <p><strong>The tool:</strong></p>
+      <ul>
+        <li>Uses validated, guideline-endorsed risk scores (CHA<sub>2</sub>DS<sub>2</sub>-VASc and ORBIT) without modification.</li>
+        <li>Presents stroke and bleeding risks side-by-side to support structured clinical judgement.</li>
+        <li>Provides qualitative net clinical benefit statements rather than automated treatment recommendations.</li>
+        <li>Explicitly signals uncertainty and the need for individualised decision-making.</li>
+      </ul>
+
+      <p>
+        The tool does not replace clinical judgement, specialist advice, shared decision-making, or local and national guidance.
+      </p>
+
+      <h2>2. Clinical Background</h2>
+
+      <p>
+        Atrial fibrillation (AF) is a major risk factor for ischaemic stroke, with AF-related strokes associated with higher mortality
+        and greater long-term disability than non-AF strokes. Oral anticoagulation substantially reduces stroke risk in NVAF but carries
+        an inherent risk of bleeding, including major and intracranial haemorrhage.<sup>1</sup>
+      </p>
+
+      <p><strong>Clinical decision-making in AF therefore requires balancing:</strong></p>
+      <ul>
+        <li>Absolute stroke risk without anticoagulation, and</li>
+        <li>Absolute bleeding risk with anticoagulation.</li>
+      </ul>
+
+      <p><strong>This balance is particularly challenging in:</strong></p>
+      <ul>
+        <li>Older adults</li>
+        <li>Patients with frailty</li>
+        <li>Those with renal impairment, anaemia, or prior bleeding</li>
+        <li>Patients with competing risks and limited physiological reserve</li>
+      </ul>
+
+      <p>
+        Guidelines consistently recommend assessing both stroke risk and bleeding risk, but also emphasise that bleeding risk scores
+        should be used to identify modifiable risk factors, not as sole determinants to withhold anticoagulation.<sup>2,3</sup>
+      </p>
+
+      <p><strong>In practice, clinicians must integrate:</strong></p>
+      <ul>
+        <li>Risk scores</li>
+        <li>Patient values and preferences</li>
+        <li>Frailty, cognition, falls risk, and comorbidity</li>
+        <li>Anticipated impact of stroke versus bleeding on quality of life</li>
+      </ul>
+
+      <p>
+        The NVAF Anticoagulation Risk Assessment Tool was developed to make this reasoning explicit, structured, and auditable,
+        rather than implicit or inconsistent.
+      </p>
+
+      <h3>Representation of older and frail patients in clinical trials</h3>
+
+      <p>
+        Although oral anticoagulation is supported by robust evidence demonstrating stroke risk reduction in non-valvular atrial fibrillation,
+        it is important to recognise that older adults and patients with frailty have been under-represented in many landmark anticoagulation trials.
+      </p>
+
+      <p>
+        Pivotal randomised controlled trials of warfarin and direct oral anticoagulants (DOACs) predominantly enrolled relatively fit older adults,
+        with limited inclusion of patients with advanced frailty, multimorbidity, cognitive impairment, high falls risk, or limited life expectancy.
+        As a result, trial populations may not fully reflect the complexity of patients encountered in routine clinical practice, particularly within
+        secondary care and geriatric medicine settings.<sup>10,11</sup>
+      </p>
+
+      <p>
+        Consequently, estimates of absolute stroke reduction and bleeding risk derived from these trials represent population averages, and their direct
+        applicability to frail individuals requires careful clinical interpretation. In frailty, the consequences of both stroke and major bleeding may be
+        amplified, while competing risks and patient priorities may differ substantially from those represented in trial cohorts.
+      </p>
+
+      <p>
+        This recognised evidence gap underlines the importance of individualised decision-making, shared discussion with patients and carers, and cautious
+        application of guideline recommendations in older and frail populations. The NVAF Anticoagulation Risk Assessment Tool is designed to support this nuanced
+        judgement rather than to extrapolate trial findings uncritically to all patients.
+      </p>
+
+      <h2>3. Stroke Risk Assessment: CHA₂DS₂-VASc</h2>
+
+      <p>
+        The tool uses the CHA<sub>2</sub>DS<sub>2</sub>-VASc score to estimate annual stroke risk in patients with NVAF who are not anticoagulated.
+      </p>
+
+      <p><strong>CHA<sub>2</sub>DS<sub>2</sub>-VASc is:</strong></p>
+      <ul>
+        <li>Widely validated across diverse populations<sup>4</sup></li>
+        <li>Recommended by major international guidelines<sup>5,6</sup></li>
+        <li>Simple to apply in routine clinical practice</li>
+      </ul>
+
+      <p>
+        Stroke risk estimates presented in the tool are derived from large cohort studies and meta-analyses and are expressed as approximate annual percentages,
+        acknowledging population-level variability.<sup>7</sup>
+      </p>
+
+      <p><strong>In keeping with guideline recommendations:</strong></p>
+      <ul>
+        <li>CHA<sub>2</sub>DS<sub>2</sub>-VASc is used without modification</li>
+        <li>Sex-specific treatment thresholds are respected</li>
+        <li>The tool highlights that in frailty, even “moderate” absolute stroke risks may have disproportionately severe consequences</li>
+      </ul>
+
+      <h2>4. Bleeding Risk Assessment: ORBIT</h2>
+
+      <h3>4.1 Rationale for selecting ORBIT</h3>
+
+      <p>
+        Several bleeding risk scores exist, including HAS-BLED, ATRIA, and ORBIT. The present tool uses ORBIT for the following reasons:
+      </p>
+
+      <p><strong>Predictive performance</strong><br>
+        ORBIT has been shown to perform at least as well as, and in some studies better than, HAS-BLED for predicting major bleeding in anticoagulated AF patients.<sup>8</sup>
+      </p>
+
+      <p><strong>Objective variables</strong><br>
+        ORBIT relies predominantly on objective clinical variables (age, renal function, haemoglobin/anaemia, prior bleeding, antiplatelet therapy), reducing subjectivity and inter-observer variability.
+      </p>
+
+      <p><strong>Simplicity and clinical usability</strong><br>
+        ORBIT avoids labile INR and alcohol-use variables, making it particularly suitable in the era of DOACs and in settings where warfarin-specific metrics are less relevant.<sup>9</sup>
+      </p>
+
+      <p><strong>Alignment with contemporary practice</strong><br>
+        ORBIT was developed and validated in cohorts including patients treated with both warfarin and direct oral anticoagulants, making it applicable to modern anticoagulation strategies.<sup>8</sup>
+      </p>
+
+      <p>
+        For these reasons, ORBIT was selected as the bleeding risk estimator in this tool in preference to HAS-BLED, while recognising that no bleeding score perfectly predicts individual outcomes.
+      </p>
+
+      <h3>4.2 Governance principle</h3>
+
+      <p>Consistent with guideline advice, ORBIT is used in this tool to:</p>
+      <ul>
+        <li>Highlight bleeding risk</li>
+        <li>Identify modifiable factors</li>
+        <li>Inform the clinician–patient discussion</li>
+      </ul>
+
+      <p>It is not used to mandate withholding anticoagulation in isolation.</p>
+
+      <h2>5. Rationale for Combined Presentation of Stroke and Bleeding Risk</h2>
+
+      <p>
+        Clinical guidelines consistently recommend assessing both stroke risk and bleeding risk when considering anticoagulation in NVAF. However, in routine practice these risks are often assessed sequentially
+        or in isolation, rather than being considered together in a structured manner.
+      </p>
+
+      <p>
+        The NVAF Anticoagulation Risk Assessment Tool presents CHA<sub>2</sub>DS<sub>2</sub>-VASc and ORBIT outputs side-by-side, enabling clinicians to directly compare:
+      </p>
+
+      <ul>
+        <li>Absolute annual stroke risk without anticoagulation, and</li>
+        <li>Absolute annual major bleeding risk with anticoagulation.</li>
+      </ul>
+
+      <p>
+        Importantly, the tool does not calculate a single numerical “net benefit” score. There is currently no validated, guideline-endorsed method for combining stroke and bleeding risk scores into a single predictive
+        metric for individual patients. Attempts to do so risk creating false precision and obscuring uncertainty.<sup>12</sup>
+      </p>
+
+      <p>
+        Instead, the tool provides qualitative net clinical benefit statements that reflect common clinical reasoning patterns, explicitly signalling when decisions are:
+      </p>
+
+      <ul>
+        <li>strongly in favour of anticoagulation,</li>
+        <li>likely to favour anticoagulation with risk mitigation, or</li>
+        <li>uncertain and preference-sensitive.</li>
+      </ul>
+
+      <p>
+        This approach aligns with guideline emphasis on clinical judgement and shared decision-making rather than algorithmic decision-making.<sup>2,3</sup>
+      </p>
+
+      <h2>6. Design Principles and Safety Features</h2>
+
+      <p>
+        The NVAF Anticoagulation Risk Assessment Tool was developed using explicit safety-by-design principles appropriate for clinical decision support.
+      </p>
+
+      <h3>6.1 Use of validated scores without modification</h3>
+      <p>
+        CHA<sub>2</sub>DS<sub>2</sub>-VASc and ORBIT are used unchanged, preserving their validated structure, thresholds, and interpretation.
+      </p>
+
+      <h3>6.2 Conservative language and uncertainty signalling</h3>
+      <p>The tool deliberately avoids directive language. Outputs are framed using terms such as:</p>
+      <ul>
+        <li>“favours anticoagulation”</li>
+        <li>“uncertain; individualise”</li>
+        <li>“preference-sensitive”</li>
+      </ul>
+      <p>
+        This avoids implying mandatory treatment decisions and reinforces clinician responsibility.
+      </p>
+
+      <h3>6.3 Explicit handling of uncertainty</h3>
+      <p>
+        Where stroke and bleeding risks are similar in magnitude, or where both risks are high, the tool explicitly labels the net clinical benefit as “uncertain; individualise”, prompting:
+      </p>
+      <ul>
+        <li>shared decision-making,</li>
+        <li>documentation of rationale,</li>
+        <li>consideration of patient values and goals of care.</li>
+      </ul>
+
+      <h3>6.4 Internal consistency checks</h3>
+      <p>To prevent contradictory inputs:</p>
+      <ul>
+        <li>Age ≥75 years is defined once within CHA<sub>2</sub>DS<sub>2</sub>-VASc and derived automatically for ORBIT.</li>
+      </ul>
+      <p>This prevents logically inconsistent age band selection across risk scores and reduces user error.</p>
+
+      <h3>6.5 Reset functionality</h3>
+      <p>A reset function is included to:</p>
+      <ul>
+        <li>Clear all inputs between assessments</li>
+        <li>Reduce risk of cross-patient data contamination</li>
+        <li>Support safe use in busy clinical environments</li>
+      </ul>
+
+      <h3>6.6 Presentation of DOAC efficacy information (anchoring risk mitigation)</h3>
+      <p>
+        The tool includes brief information on the relative efficacy of direct oral anticoagulants derived from atrial fibrillation trial populations.
+        To reduce anchoring—particularly in advanced frailty where competing risks and time-to-benefit considerations may predominate—the interface explicitly reframes
+        this information when severe frailty is selected and visually prioritises qualitative net clinical benefit and uncertainty statements.
+      </p>
+
+      <h2>7. Interpretation and Clinical Use</h2>
+
+      <p>The tool is intended to be used as part of a structured clinical assessment, not as a standalone decision-maker.</p>
+
+      <p><strong>Clinicians should:</strong></p>
+      <ul>
+        <li>Use the output to inform discussion with patients and carers</li>
+        <li>Consider frailty, cognition, falls risk, comorbidity, and life expectancy</li>
+        <li>Address modifiable bleeding risk factors where possible</li>
+        <li>Document the reasoning behind anticoagulation decisions, particularly where uncertainty exists</li>
+      </ul>
+
+      <p><strong>The tool may be particularly helpful in:</strong></p>
+      <ul>
+        <li>Older adults with intermediate stroke risk</li>
+        <li>Patients with prior bleeding or anaemia</li>
+        <li>Situations where clinicians experience equipoise or disagreement</li>
+      </ul>
+
+      <h2>8. Limitations</h2>
+
+      <p>This tool has several important limitations:</p>
+      <ul>
+        <li>Risk estimates are derived from population-level data and do not predict individual outcomes.</li>
+        <li>Frailty is heterogeneous and not fully captured by existing risk scores.</li>
+        <li>Competing risks and non-cardiovascular mortality are not modelled.</li>
+        <li>The tool does not replace specialist input in complex cases.</li>
+      </ul>
+
+      <p>
+        These limitations are inherent to current evidence and are explicitly acknowledged within the tool’s design.
+      </p>
+
+      <h2>9. Digital Clinical Safety and Governance Considerations</h2>
+
+      <p>
+        The NVAF Anticoagulation Risk Assessment Tool is a clinical decision support tool, not a medical device that automates treatment decisions.
+      </p>
+
+      <p>It is intended to:</p>
+      <ul>
+        <li>Reduce unwarranted variation</li>
+        <li>Promote transparent reasoning</li>
+        <li>Support documentation and governance review</li>
+      </ul>
+
+      <p>
+        Version control is maintained, and substantive changes are expected to be driven by emerging evidence or guideline updates rather than cosmetic iteration.
+      </p>
+
+      <h2>10. Conclusion</h2>
+
+      <p>
+        The NVAF Anticoagulation Risk Assessment Tool has been developed to support clinicians in navigating the complex balance between stroke prevention and bleeding risk,
+        particularly in older adults and patients with frailty, where decision-making is often nuanced and preference-sensitive.
+      </p>
+
+      <p>
+        By combining validated, guideline-endorsed risk scores (CHA<sub>2</sub>DS<sub>2</sub>-VASc and ORBIT) without modification and presenting their outputs side-by-side,
+        the tool promotes structured clinical reasoning while avoiding false precision or algorithmic decision-making. Its deliberate use of conservative language, explicit uncertainty signalling,
+        and safety features reflects both the limitations of the current evidence base and the realities of contemporary clinical practice.
+      </p>
+
+      <p>
+        The tool is intended to support, not replace, clinical judgement, shared decision-making, and appropriate documentation. Used within appropriate clinical governance frameworks,
+        it may help reduce unwarranted variation, enhance transparency of decision-making, and improve the quality of clinician–patient discussions regarding anticoagulation in NVAF.
+      </p>
+
+      <h2>11. References</h2>
+
+      <ol class="refs">
+        <li>Wolf PA, Abbott RD, Kannel WB. Atrial fibrillation as an independent risk factor for stroke: the Framingham Study. <em>Stroke</em> 1991;22:983–8.</li>
+        <li>National Institute for Health and Care Excellence. Atrial fibrillation: diagnosis and management (NG196). NICE; 2021.</li>
+        <li>Kirchhof P, Benussi S, Kotecha D, et al. 2016 ESC Guidelines for the management of atrial fibrillation developed in collaboration with EACTS. <em>Eur Heart J</em> 2016;37:2893–962.</li>
+        <li>Lip GYH, Nieuwlaat R, Pisters R, et al. Refining clinical risk stratification for predicting stroke and thromboembolism in atrial fibrillation using a novel risk factor-based approach: the Euro Heart Survey. <em>Chest</em> 2010;137:263–72.</li>
+        <li>January CT, Wann LS, Calkins H, et al. 2019 AHA/ACC/HRS focused update of the 2014 guideline for the management of patients with atrial fibrillation. <em>Circulation</em> 2019;140:e125–51.</li>
+        <li>Hindricks G, Potpara T, Dagres N, et al. 2020 ESC Guidelines for the diagnosis and management of atrial fibrillation. <em>Eur Heart J</em> 2021;42:373–498.</li>
+        <li>Friberg L, Rosenqvist M, Lip GYH. Evaluation of risk stratification schemes for ischaemic stroke and bleeding in atrial fibrillation. <em>Circulation</em> 2012;125:2298–307.</li>
+        <li>O’Brien EC, Simon DN, Thomas LE, et al. The ORBIT bleeding score: a simple bedside score to assess bleeding risk in atrial fibrillation. <em>Eur Heart J</em> 2015;36:3258–64.</li>
+        <li>Lip GYH, Banerjee A, Boriani G, et al. Antithrombotic therapy for atrial fibrillation: CHEST guideline and expert panel report. <em>Chest</em> 2018;154:1121–201.</li>
+        <li>Kakkar AK, Mueller I, Bassand JP, et al. Risk profiles and antithrombotic treatment of patients newly diagnosed with atrial fibrillation at risk of stroke: GARFIELD-AF Registry. <em>Lancet</em> 2013;382:1760–8.</li>
+        <li>Sjalander S, Sjögren V, Renlund H, et al. Dabigatran, rivaroxaban and apixaban versus warfarin in atrial fibrillation patients ≥75 years. <em>Heart</em> 2018;104:1868–74.</li>
+        <li>Singer DE, Chang Y, Borowsky LH, et al. A new risk scheme to predict ischemic stroke and other thromboembolism in atrial fibrillation: the ATRIA study stroke risk score. <em>J Am Heart Assoc</em> 2013;2:e000250.</li>
+      </ol>
+
+      <footer>
+        © 2026 Prabhath Fernando MBBS MD FRCP. All rights reserved.<br>
+        This governance document supports transparent, auditable clinical use of the associated digital tool. It does not replace local or national guidance.
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>
