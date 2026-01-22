@@ -39,7 +39,7 @@
 
   /* Button-style links */
   .tool a.toolbtn, .section a.plainbtn {
-    display: inline-block;
+    display: block;                 /* ensures consistent sizing */
     padding: 10px 16px;
     background: #005eb8;
     color: white;
@@ -50,16 +50,13 @@
     cursor: pointer;
     font: inherit;
 
-    width: 100%;
-    text-align: left;
-    box-sizing: border-box;
-
-    padding-right: 32px; /* ensures visible right-hand gap */
+    width: calc(100% - 16px);       /* uniform length + right-hand gap */
+    text-align: left;               /* keep names left aligned */
+    box-sizing: border-box;         /* prevents overflow with padding */
+    margin-right: 16px;             /* visible inset on right */
   }
 
-  .tool a.toolbtn:hover, .section a.plainbtn:hover {
-    background: #003f87;
-  }
+  .tool a.toolbtn:hover, .section a.plainbtn:hover { background: #003f87; }
 
   .section {
     background: #ffffff;
@@ -68,7 +65,6 @@
     margin-top: 18px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   }
-
   .section h2 { font-size: 1.2em; margin-top: 0; }
 
   .section a.inline {
@@ -122,7 +118,8 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
   <p>
     Provides a clinician-led interpretative framework for <strong>assessing diastolic function</strong> in patients with
     <strong>suspected heart failure</strong>, particularly where echocardiographic parameters are <strong>incomplete,
-    discordant, or obtained under non-ideal conditions</strong>.
+    discordant, or obtained under non-ideal conditions</strong>. Emphasises <strong>clinical context, probability,
+    and confidence</strong> rather than rigid grading.
   </p>
   <a class="toolbtn"
      href="https://pf-clinical-tools.github.io/diastolic-dysfunction/"
@@ -135,7 +132,8 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
   <h2>3. Peri-operative Catheterisation and TWOC Decision Aid in Femoral and Pelvic Fracture Patients</h2>
   <p>
     Supports nursing and medical staff in making <strong>safe, auditable decisions</strong> regarding urinary
-    catheterisation and <strong>trial without catheter (TWOC)</strong>.
+    catheterisation and <strong>trial without catheter (TWOC)</strong> in patients with femoral or pelvic fractures.
+    Focuses on minimising unnecessary catheter use while reducing catheter-associated harm.
   </p>
   <a class="toolbtn"
      href="https://pf-clinical-tools.github.io/catheter-twoc-femoral-pelvic/"
@@ -147,13 +145,68 @@ Use within appropriate clinical governance frameworks and escalate where uncerta
 <div class="tool">
   <h2>4. Peri-operative PE / DVT Management Decision Support Tool (Femoral Fractures)</h2>
   <p>
-    Provides a structured framework to help clinicians <strong>balance thrombotic and bleeding risks</strong>.
+    Provides a structured framework to help clinicians <strong>balance thrombotic and bleeding risks</strong>
+    in patients with acute pulmonary embolism or deep vein thrombosis who require urgent femoral fracture surgery.
+    Designed to support multidisciplinary peri-operative decision-making.
   </p>
   <a class="toolbtn"
      href="https://pf-clinical-tools.github.io/periop-pe-dvt-femoral-fracture/PeriOp_PE_DVT_FemoralFracture_DecisionSupport_DRAFT_v3.6_TIMING_REFS_ADDED.html"
      target="_blank" rel="noopener">
     Open Peri-operative PE / DVT Decision Support Tool
   </a>
+</div>
+
+<div class="section">
+  <h2>Governance &amp; Evidence</h2>
+  <p>
+    Governance documents and evidence summaries are made available here to support transparency, audit,
+    and appropriate clinical use.
+  </p>
+
+  <ul>
+    <li>
+      <strong>NVAF Anticoagulation Risk Assessment Tool</strong><br>
+      <a class="inline" href="governance/nvaf-governance-evidence-v1.3.html" target="_blank" rel="noopener">
+        Governance &amp; Evidence (v1.3 FINAL)
+      </a>
+      <span style="color:#666; font-weight:500;">
+        &nbsp;— earlier versions archived for audit trail (v1.2)
+      </span>
+    </li>
+
+    <li>
+      <strong>Clinical Interpretation of Diastolic Function in Suspected Heart Failure</strong><br>
+      <a class="inline" href="governance/Clinical_Interpretation_of_Diastolic_Function_in_Suspected_Heart_Failure_Governance_v1.1.5_LOCKED.html" target="_blank" rel="noopener">
+        Governance &amp; Evidence (v1.1.5 — LOCKED)
+      </a>
+    </li>
+
+    <li>
+      <strong>Peri-operative Catheterisation and TWOC Decision Aid<br>(Femoral and Pelvic Fracture Patients)</strong><br>
+      <a class="inline" href="governance/catheter-governance-v1.1.1.html" target="_blank" rel="noopener">
+        Governance, Evidence &amp; Methods (v1.1.1 — prepared for review)
+      </a>
+    </li>
+
+    <li>
+      <strong>Peri-operative PE / DVT Management Decision Support Tool</strong><br>
+      <a class="inline"
+         href="governance/PeriOp_PE_DVT_FemoralHipFracture_Governance_v3.6_DRAFT.html"
+         target="_blank"
+         rel="noopener">
+        Evidence summary &amp; references (v3.6 — draft)
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="notes">
+<strong>Notes on use:</strong>
+<ul>
+  <li>All tools are clinician-facing</li>
+  <li>Language and thresholds are intentionally conservative</li>
+  <li>Mixed or uncertain findings should prompt senior review or specialist input</li>
+</ul>
 </div>
 
 <footer>
