@@ -39,22 +39,21 @@
 
   /* Button-style links */
   .tool a.toolbtn, .section a.plainbtn {
-    display: block;                 /* ensures consistent sizing */
-    padding: 10px 16px;
-    background: #005eb8;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-    font: inherit;
+  display: block;            /* was inline-block */
+  padding: 10px 16px;
+  background: #005eb8;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  font: inherit;
 
-    width: calc(100% - 16px);       /* uniform length + right-hand gap */
-    text-align: left;               /* keep names left aligned */
-    box-sizing: border-box;         /* prevents overflow with padding */
-    margin-right: 16px;             /* visible inset on right */
-  }
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
 
   .tool a.toolbtn:hover, .section a.plainbtn:hover { background: #003f87; }
 
