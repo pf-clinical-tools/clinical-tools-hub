@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Peri-operative Management of Acute Pulmonary Embolism and Deep Vein Thrombosis in Patients Requiring Urgent Surgery for Femoral/Hip Fractures</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+<!-- GOVERNANCE_MARKER_PERIOP_PE_DVT_FEMORALHIPFRACTURE_V3_6_DRAFT_FULL_REV3_OPTION1_RIETE_FIXED -->
+
+<style>
+  :root{
+    --bg:#f7f8fa;
+    --card:#ffffff;
+    --text:#111;
+    --muted:#444;
+    --border:#d0d7de;
+    --blue:#2f6fb0;
+    --red:#b42318;
+    --amber:#b36b00;
+    --green:#1b7f3a;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    line-height:1.6;
+  }
+  .container{
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 18px;
+  }
+  h1{ color:#0b3c5d; font-size:1.6em; margin: 10px 0 10px; }
+  h2{ color:#0b3c5d; font-size:1.25em; margin: 26px 0 8px; }
+  h3{ color:#0b3c5d; font-size:1.08em; margin: 18px 0 6px; }
+  p, li{ font-size:0.98em; }
+  .small{ font-size:0.92em; color:var(--muted); }
+  sup{ font-size:0.75em; vertical-align:super; }
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:14px;
+    margin: 12px 0;
+  }
+  .note{
+    background:#eef6ff;
+    border:1px solid #7fb3e6;
+    border-left:4px solid var(--blue);
+    border-radius:12px;
+    padding:12px;
+    margin: 12px 0;
+  }
+  .warn{
+    background:#fdecea;
+    border:1px solid #f3b1b1;
+    border-left:4px solid var(--red);
+    border-radius:12px;
+    padding:12px;
+    margin: 12px 0;
+  }
+  .amberBox{
+    background:#fff3e0;
+    border:1px solid #f1d2a8;
+    border-left:4px solid var(--amber);
+    border-radius:12px;
+    padding:12px;
+    margin: 12px 0;
+  }
+  .pill{
+    display:inline-block;
+    padding:2px 8px;
+    border-radius:999px;
+    font-size:0.85em;
+    border:1px solid var(--border);
+    background:#fff;
+    margin-right:6px;
+    white-space:nowrap;
+  }
+  .pill.g{ border-color:var(--green); color:var(--green); background:#e6f4ea; }
+  .pill.a{ border-color:var(--amber); color:var(--amber); background:#fff3e0; }
+  .pill.r{ border-color:var(--red); color:var(--red); background:#fdecea; }
+  details{
+    background:#f9fafb;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:10px 12px;
+    margin: 10px 0;
+  }
+  summary{
+    cursor:pointer;
+    font-weight:700;
+    color:#0b3c5d;
+  }
+  details[open] summary{ margin-bottom:6px; }
+  hr{
+    border:none;
+    border-top:1px solid var(--border);
+    margin: 22px 0;
+  }
+  a{ color:#0b3c5d; }
+  .refs ol{ padding-left: 20px; }
+  .refs li{ margin: 10px 0; }
+  footer{
+    margin-top:28px;
+    padding-top:12px;
+    border-top:1px solid var(--border);
+    color:#555;
+    font-size:0.9em;
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <h1>Peri-operative Management of Acute Pulmonary Embolism and Deep Vein Thrombosis in Patients Requiring Urgent Surgery for Femoral/Hip Fractures</h1>
+
+  <div class="card">
+    <div class="small">
+      <b>Author:</b> Dr Prabhath Fernando MBBS MD FRCP<br />
+      <b>Governance document version:</b> v3.6 (DRAFT)<br />
+      <b>Associated clinical tool:</b> Peri-operative PE/DVT Risk-Balancing Decision Support Tool for Femoral/Hip Fractures (live working draft)<br />
+      <b>Status:</b> Governance narrative synthesis (for manual review; not yet FINAL-LOCKED)
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Purpose</b><br />
+    This governance document provides a structured, reference-anchored synthesis underpinning the associated interactive decision-support tool.
+    It explicitly distinguishes (i) <b>guideline-based</b> recommendations, (ii) <b>evidence-informed</b> operational decision triggers where trials do not define a single safe threshold,
+    and (iii) <b>protocol-dependent</b> elements contingent on haemostasis, anaesthetic technique, and local policy.
+  </div>
+
+  <div class="warn">
+    <b>Important safety boundaries</b><br />
+    This framework is not intended for haemodynamically unstable (high-risk) PE requiring immediate resuscitation or reperfusion therapy, for active major bleeding/uncontrolled coagulopathy,
+    or where an alternative emergency pathway is required. In such cases, urgent senior/critical care input is mandatory and decisions must be bespoke.<sup>1</sup>
+    <ul class="small" style="margin-top:10px;">
+      <li><b>Scope note:</b> This framework is designed for lower-limb VTE (PE and/or lower-limb DVT) in urgent femoral/hip fracture surgery pathways.</li>
+      <li><b>Out of scope:</b> pregnancy/postpartum VTE, paediatrics, upper-limb DVT, unusual-site thrombosis (e.g., splanchnic/cerebral), and elective surgery pathways.</li>
+    </ul>
+    <p class="small" style="margin:10px 0 0 0;">
+      This tool must not override PE resuscitation or reperfusion pathways if high-risk features emerge peri-operatively; those pathways take precedence.<sup>1</sup>
+    </p>
+  </div>
+
+  <div class="amberBox">
+    <b>How to interpret “time horizons” in this document</b><br />
+    Numeric time horizons (e.g., “48–72 hours”) are used as <b>operational decision triggers</b> to prompt escalation and multidisciplinary review, not as claims of biologically “safe” cut-offs.
+    Where evidence does not mandate a single threshold, statements are labelled and written to avoid over-certainty.<sup>7,14,15</sup>
+  </div>
+
+  <hr />
+
+  <h2>Abstract</h2>
+  <p>
+    The peri-operative management of patients with acute pulmonary embolism (PE) or deep vein thrombosis (DVT) who require urgent surgery presents a major clinical challenge.
+    Surgical delay is associated with increased morbidity and mortality in femoral/hip fracture pathways, while interruption of therapeutic anticoagulation during the early phase of venous thromboembolism (VTE)
+    carries a risk of recurrence and embolic progression. This document synthesises international guideline recommendations, observational/registry data, physiological clot-stabilisation principles,
+    and peri-operative anticoagulation guidance to provide a structured, pragmatic framework suitable for interactive clinical decision-support tools that standardise care, reduce unwarranted variation,
+    and balance thrombotic and bleeding risks transparently.<sup>1–5,7–15</sup>
+  </p>
+
+  <h2>1. Introduction</h2>
+  <p>
+    Venous thromboembolism, encompassing pulmonary embolism and deep vein thrombosis, remains a leading cause of preventable morbidity and mortality.
+    In urgent orthopaedic trauma—particularly older adults with femoral/hip fractures—the coexistence of acute VTE introduces competing imperatives:
+    the need for timely surgery and the need to minimise interruption of anticoagulation to prevent clot propagation and recurrence during the earliest phase after diagnosis.<sup>1</sup>
+  </p>
+  <p>
+    Hip fracture care is time-critical. NICE recommends surgery on the day of, or the day after, admission.<sup>2</sup>
+    The National Hip Fracture Database (NHFD) Best Practice Tariff defines a core quality standard as surgery within 36 hours to start of anaesthesia.<sup>3</sup>
+    Systematic reviews/meta-analyses demonstrate worse outcomes with delay (including increased mortality and complications), establishing delay itself as a modifiable harm.<sup>4,5</sup>
+  </p>
+
+  <h2>2. Natural history of acute VTE and early recurrence risk</h2>
+  <p>
+    The risk of VTE recurrence is highest during the early phase following diagnosis. Observational cohort data demonstrate that recurrent thromboembolism can occur even during anticoagulant treatment,
+    with early time periods representing heightened vulnerability.<sup>9</sup>
+  </p>
+
+  <!-- ✅ REPLACED: recurrence paragraph (clearer, blocks “delay as long as possible” inference) -->
+  <p>
+    When treated with uninterrupted therapeutic anticoagulation, the cumulative risk of recurrent venous thromboembolism over the initial three months of treatment is low, commonly cited at approximately <b>1–2%</b> in clinical trial–era and guideline syntheses.<sup>12</sup>
+    This figure reflects the overall effectiveness of anticoagulation over the full treatment period and should not be interpreted as indicating uniform risk over time.
+  </p>
+
+  <p>
+    Recurrence risk is markedly <b>front-loaded</b>, with the highest relative hazard occurring early after diagnosis and declining progressively as effective anticoagulation is maintained.<sup>9–11</sup>
+    Importantly, this early risk varies substantially by clinical context, with higher recurrence rates observed in patients with more severe PE physiology, active malignancy, extensive proximal thrombosis, or high-risk thrombophilic states.<sup>11</sup>
+  </p>
+
+  <p>
+    Crucially, the presence of a front-loaded thrombotic hazard does not imply that urgent surgery should be deferred toward the three-month treatment horizon.
+    In femoral and hip fracture pathways, prolonged surgical delay is itself associated with well-established increases in mortality and morbidity.<sup>2–5</sup>
+    Accordingly, the 1–2% three-month recurrence estimate should be understood as evidence of relative risk reduction under sustained anticoagulation, not as evidence of a biologically “safe” early period nor as justification for maximal delay.
+    Peri-operative decision-making therefore requires explicit balancing of two competing time-dependent harms: early thrombotic risk versus the escalating harms of delayed surgery.
+  </p>
+
+  <h2>3. Clot stabilisation physiology and the effect of anticoagulation</h2>
+
+  <h3>3A. Clot stabilisation physiology and the effect of anticoagulation (evidence-based principles)</h3>
+
+  <p>
+    Therapeutic anticoagulation in acute venous thromboembolism does not lyse thrombus directly. Instead, its primary early effect is to inhibit further thrombin generation, thereby preventing ongoing clot propagation and embolisation while endogenous fibrinolytic mechanisms act over time. This distinction is central to understanding peri-operative thrombotic risk and its evolution after treatment initiation.
+  </p>
+
+  <p>
+    Experimental and pathological studies demonstrate that thrombus extension is most active in the earliest phase following acute venous thrombosis, when fibrin deposition and thrombin activity are maximal. In classic venographic and surgical-pathology studies of acute DVT, thrombus propagation occurred predominantly during the first 24–48 hours, with subsequent organisation and adherence to the venous wall thereafter.<sup>7,8</sup>
+    These classic series provide a conceptual model of early propagation/organisation rather than a modern quantified threshold.
+  </p>
+
+  <p>
+    Clinical cohort data support this biological model. Observational studies of recurrent VTE show that the risk of recurrence and embolic progression is front-loaded, with the highest risk occurring early after diagnosis and declining rapidly once effective anticoagulation is established.<sup>9–11</sup>
+    In adequately anticoagulated patients, recurrence during the initial three months of treatment is low (approximately 1–2%), with the earliest treatment period representing the highest relative vulnerability.<sup>12</sup>
+    Rates vary by population and are higher in high-risk subgroups (e.g., active cancer or severe PE physiology).
+  </p>
+
+  <p>
+    Peri-operative anticoagulation guidelines explicitly acknowledge this time-dependent risk reduction. Although no randomised trials define an exact time point at which interruption of anticoagulation becomes “safe,” expert consensus recognises that thrombotic risk decreases progressively with duration of therapeutic anticoagulation.<sup>14,15</sup> By 48–72 hours of uninterrupted therapeutic anticoagulation, the clot is generally considered more stable than during the first 24–48 hours, supporting cautious, short-duration interruption where surgery cannot be delayed.
+  </p>
+
+  <p>
+    Importantly, this concept of “stabilisation” should not be misinterpreted as thrombus resolution or absence of risk. Rather, it reflects a relative reduction in the propensity for propagation and embolisation, sufficient in some clinical contexts to justify carefully managed interruption when competing harms (such as delay to urgent femoral/hip fracture surgery) are substantial. The absence of a biologically absolute threshold underpins the governance approach adopted in this framework: time-based horizons (e.g. 48–72 hours) are treated as operational decision triggers, not as claims of universal safety.
+  </p>
+
+  <h2>4. Surgical delay and its consequences in femoral/hip fracture pathways</h2>
+  <p>
+    In hip fracture patients, surgical delay is independently associated with increased mortality and complications. Systematic review/meta-analysis evidence demonstrates that earlier surgery is associated with improved outcomes,
+    including lower mortality and fewer complications; delays beyond commonly used thresholds (including 48 hours) are associated with worse outcomes.<sup>4,5</sup>
+    NICE and NHFD best-practice standards reinforce this by defining prompt surgery as a quality expectation in routine care.<sup>2,3</sup>
+  </p>
+  <p>
+    Therefore, while delaying surgery may reduce thrombotic risk in some patients with acute VTE, prolonged delay introduces competing harms that may outweigh potential thrombotic benefit.
+    The governance challenge is to identify compromise points in which clot stability has improved sufficiently to tolerate brief interruption where urgent surgery cannot be deferred.
+  </p>
+  <p>
+    <b>Audit expectation:</b> delays beyond the agreed institutional standard (e.g., 36 hours to start of anaesthesia) should trigger documented senior review and a recorded rationale for delay.<sup>2,3</sup>
+  </p>
+
+  <h2>5. Diagnostic and risk stratification requirements</h2>
+
+  <h3>5.1 Pulmonary embolism severity</h3>
+  <p>
+    PE severity stratification is central to peri-operative decision-making. ESC guidance classifies PE into low-, intermediate-, and high-risk categories based on haemodynamic status, right ventricular (RV) dysfunction,
+    and myocardial injury biomarkers.<sup>1</sup> High-risk (massive) PE with shock or hypotension generally precludes routine urgent surgery until haemodynamic stability is achieved.<sup>1</sup>
+  </p>
+  <p>
+    Governance expectation: in patients with confirmed PE, minimum prerequisite assessment should include ECG, cardiac biomarkers, and evaluation of RV function (via CTPA report where available, or echocardiography where required).<sup>1</sup>
+  </p>
+
+  <h3>5.2 Deep vein thrombosis assessment and anatomy</h3>
+  <p>
+    DVT anatomy is clinically relevant: proximal DVT represents an ongoing embolic source and materially alters peri-operative mitigation considerations. Where DVT status/anatomy is unknown, conservative assumptions are required.
+    (Tool safeguard: unknown DVT anatomy should not permit an overall GREEN output.)
+  </p>
+
+  <h2>6. Peri-operative anticoagulation strategy (governance-focused)</h2>
+
+  <h3>6.1 Choice of anticoagulant (principles)</h3>
+  <p>
+    In urgent peri-operative contexts, LMWH is commonly used due to predictable pharmacokinetics and ease of interruption; UFH may be reserved for selected circumstances requiring rapid titration/reversal.
+    (Local policy and specialist input determine agent choice; this document focuses on governance principles rather than local formulary enforcement.)
+  </p>
+
+  <h3>6.2 Pre-operative interruption (verifiable peri-operative guidance)</h3>
+  <p>
+    For therapeutic-dose LMWH, peri-operative antithrombotic guidance supports withholding LMWH in advance of major surgery, with many protocols using a practical minimum of at least 24 hours between last therapeutic dose and surgery,
+    while recognising that bleeding risk, renal function, and anaesthetic technique may require longer intervals.<sup>14,15</sup>
+  </p>
+
+  <h3>6.3 Post-operative resumption (protocol-dependent; haemostasis and neuraxial constraints)</h3>
+  <p>
+    Post-operative anticoagulation resumption is contingent on haemostasis, surgical factors (extent of dissection, drains/ooze, re-operation risk), patient factors (coagulopathy, thrombocytopenia, anaemia),
+    and anaesthetic constraints. Peri-operative antithrombotic guidance emphasises tailoring resumption to procedure bleeding risk and clinical context rather than prescribing a universal schedule.<sup>14,15</sup>
+  </p>
+  <p>
+    In hip fracture surgery, neuraxial/regional techniques are common and impose timing constraints for antithrombotic drugs. ESAIC/ESRA guidance provides detailed safety recommendations around regional anaesthesia in patients receiving antithrombotic drugs,
+    and anticoagulant timing must comply with these constraints and local anaesthetic policy.<sup>16</sup>
+  </p>
+  <p>
+    <b>Safety precedence statement:</b> where neuraxial/regional anaesthesia safety requirements constrain anticoagulant timing, neuraxial safety constraints take precedence and the VTE mitigation plan must be adapted accordingly (e.g., mechanical measures and MDT-agreed interim strategies).<sup>16</sup>
+  </p>
+  <p>
+    Governance-safe framing used in the associated tool: where staged escalation strategies are described, they are explicitly labelled as evidence-informed and protocol-dependent,
+    requiring surgical confirmation of haemostasis and compliance with neuraxial/regional safety guidance.<sup>14–16</sup>
+  </p>
+
+  <h2>7. Balancing bleeding and thrombotic risk (operational triggers)</h2>
+  <p>
+    Bleeding risk is determined by surgical factors (extent of dissection, anticipated haemostasis), patient factors (coagulopathy, thrombocytopenia, anaemia),
+    and concomitant medications. Patients in whom therapeutic anticoagulation cannot be resumed within an operationally relevant timeframe (commonly ~48–72 hours post-operatively) represent a high-risk scenario requiring escalation and mitigation planning.
+    This timeframe should be treated as an operational decision trigger, not a definitive biological threshold, and should prompt multidisciplinary review and documented justification of the chosen mitigation strategy.<sup>14,15</sup>
+  </p>
+
+  <h2>8. Inferior vena cava (IVC) filters (restrictive evidence-based role)</h2>
+  <p>
+    IVC filters do not treat thrombosis and have a narrow role in contemporary VTE practice. Randomised trial evidence does not support routine filter use in patients who can be anticoagulated.
+    In PREPIC2, adding a retrievable IVC filter to anticoagulation did not reduce symptomatic recurrent PE at three months compared with anticoagulation alone.<sup>17</sup>
+    Long-term follow-up of permanent filters (PREPIC) demonstrated reduced PE but increased DVT and no survival benefit, reinforcing that systematic use in unselected patients is not recommended.<sup>18</sup>
+  </p>
+  <p>
+    Regulatory communications emphasise retrieval once protection is no longer needed; the FDA Safety Communication (2014) recommends clinicians consider removal once protection from PE is no longer required.<sup>19</sup>
+  </p>
+  <p>
+    Governance-safe indication framing (restrictive): in the peri-operative femoral/hip fracture setting, filters should not be planned routinely.
+    Consideration is restricted to exceptional circumstances involving documented proximal DVT (ongoing embolic source), inability to provide or resume therapeutic anticoagulation in a clinically meaningful timeframe,
+    unacceptably high perceived embolic risk during interruption, and a documented plan for prompt retrieval once anticoagulation is re-established.<sup>17–19</sup>
+  </p>
+  <p>
+    <b>Governance safeguard:</b> IVC filters should not be used solely to facilitate neuraxial anaesthesia if anticoagulation can otherwise be resumed within a short, clinically acceptable timeframe; the default position remains restrictive filter use where anticoagulation is feasible.<sup>17–19</sup>
+  </p>
+
+  <h2>9. Timing of surgery after acute PE (pragmatic governance position)</h2>
+  <p>
+    No randomised trials define an optimal timing of surgery after acute PE. However, synthesising:
+    (i) clot stabilisation physiology and early recurrence risk (front-loaded hazard that decreases with sustained effective anticoagulation),<sup>7–15</sup>
+    (ii) the well-established harms of surgical delay in femoral/hip fracture pathways,<sup>2–5</sup>
+    and (iii) peri-operative antithrombotic guidance,<sup>14,15</sup>
+    supports a pragmatic governance approach in which surgery proceeds as early as clinically safe.
+  </p>
+  <p>
+    In haemodynamically stable PE where immediate surgery is not feasible, a window of approximately 48–72 hours after initiation of therapeutic anticoagulation can be used as an <b>operational decision trigger</b>
+    to prompt escalation and explicit MDT documentation of thrombotic versus bleeding risk and the planned peri-operative anticoagulation strategy.
+    This is not a claim of biological safety, and earlier surgery may be appropriate in carefully selected low-risk scenarios, while high-risk PE requires stabilisation before surgery can be considered.<sup>1,14,15</sup>
+  </p>
+  <p>
+    <b>Exception-case documentation trigger:</b> if surgery is planned within approximately 24 hours of PE diagnosis, this should be treated as an exceptional-case decision requiring documented senior MDT rationale (including the reason earlier surgery is necessary and how thrombotic and bleeding risks are being mitigated).
+  </p>
+
+  <h2>10. Implications for interactive decision-support tools</h2>
+  <p>
+    The complexity and multi-dimensional nature of peri-operative VTE management make it well suited to structured, interactive decision-support tools.
+    Governance-safe tools should mandate key diagnostic inputs, stratify thrombotic and bleeding risk transparently, present clear management recommendations, and explicitly acknowledge areas of uncertainty.<sup>1,14–16</sup>
+  </p>
+  <p><b>Governance-safe tool design requirements:</b></p>
+  <ul>
+    <li><b>Require key prerequisites</b> (PE severity inputs; prompt DVT anatomy when feasible).</li>
+    <li><b>Label outputs by certainty class</b> (guideline-based vs evidence-informed vs protocol-dependent).</li>
+    <li><b>Treat unknown anatomy conservatively</b> (unknown DVT should not generate GREEN overall output).</li>
+    <li><b>Default mixed-domain risk to escalation</b> to avoid averaging away high-risk features.</li>
+    <li><b>Preserve clinician judgement and documentation</b> (tool supports, does not replace, MDT decisions).</li>
+  </ul>
+  <p class="small">
+    <b>Practical clarity note:</b> a GREEN output never equates to “no risk”; it represents the lowest risk band within this tool’s framework and still assumes appropriate MDT oversight and documentation.
+  </p>
+
+  <h2>Conclusion</h2>
+  <p>
+    Peri-operative management of acute PE and DVT in urgent femoral/hip fracture surgery requires careful balancing of competing risks.
+    By integrating guideline evidence, physiological clot-stabilisation principles, peri-operative anticoagulation guidance, and hip fracture delay evidence,
+    clinicians can identify windows in which surgery can proceed while maintaining an explicit and auditable balance between thrombotic and bleeding harm.
+    This synthesis provides a foundation for interactive decision-support tools that are evidence-aligned, transparent, and governance-safe.<sup>1–19</sup>
+  </p>
+
+  <h2>Methods: Uncertainty and evidence handling (expanded, audit-focused)</h2>
+  <p>
+    This synthesis and the associated decision-support logic were developed by integrating:
+    international PE guidance (ESC),<sup>1</sup>
+    UK hip fracture standards (NICE CG124; NHFD BPT),<sup>2,3</sup>
+    systematic review/meta-analysis evidence on harms from surgical delay,<sup>4,5</sup>
+    physiological and pathological evidence on thrombus propagation and stabilisation in the earliest phase of DVT,<sup>7,8</sup>
+    observational evidence on recurrence during anticoagulant treatment,<sup>9</sup>
+    RIETE registry evidence demonstrating early outcomes and context-dependent risk (including early outcomes following premature discontinuation and variation of 90-day outcomes in cancer-associated VTE),<sup>10,11</sup>
+    trial-era evidence supporting low overall recurrence under effective anticoagulation while recognising early vulnerability,<sup>12</sup>
+    peri-operative antithrombotic guidance (CHEST perioperative guideline; UK haematology peri-operative guidance),<sup>14,15</sup>
+    anaesthetic safety guidance for neuraxial/regional techniques (ESAIC/ESRA),<sup>16</sup>
+    and randomised trial/regulatory evidence informing a restrictive approach to IVC filters and prompt retrieval (PREPIC2; PREPIC; FDA Safety Communication).<sup>17–19</sup>
+  </p>
+  <p>
+    Where high-quality guidance explicitly defines principles or actions, statements are treated as <span class="pill g">Guideline-based</span>.
+    Where evidence supports a principle but does not mandate a single threshold (e.g., timing of urgent surgery after PE; post-operative escalation intensity), statements are framed as <span class="pill a">Evidence-informed</span> and/or <span class="pill a">Protocol-dependent</span>,
+    contingent on haemostasis, anaesthetic technique, and local policy, and written to avoid over-certainty.<sup>14–16</sup>
+  </p>
+  <p>
+    Numeric time horizons (e.g., 48–72 hours) are presented as <b>operational decision triggers</b> to prompt escalation and multidisciplinary review rather than definitive biological cut-offs.
+    To reduce inadvertent over-certainty, the associated tool labels key outputs by certainty class, treats unknown anatomy conservatively, and applies a safety rule whereby mixed risk-category outputs default to escalation with senior MDT review.
+  </p>
+  <p>
+    <b>Version control and change control:</b> the decision logic and wording are version-controlled; changes are made via documented change control with dated versions and periodic review against guideline updates.
+  </p>
+
+  <hr />
+
+  <h2>References </h2>
+  <div class="refs">
+    <ol>
+      <li>
+        Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism developed in collaboration with the European Respiratory Society (ERS).
+        <i>Eur Heart J</i> 2020;41(4):543–603. doi:10.1093/eurheartj/ehz405.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/31504429/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        National Institute for Health and Care Excellence. <i>Hip fracture: management</i> (CG124). Recommendation: perform surgery on the day of, or the day after, admission. NICE; 2011.
+        <a href="https://www.nice.org.uk/guidance/cg124/chapter/recommendations" target="_blank" rel="noopener">NICE</a>
+      </li>
+      <li>
+        National Hip Fracture Database. Best Practice Tariff (BPT) User Guide: time to surgery within 36 hours to start of anaesthesia.
+        <a href="https://www.nhfd.co.uk/20/hipfracturer.nsf/0/9b0c5ea2e986ff56802577af0046b1df/%24file/best%20practice%20tariff%20user%20guide.pdf" target="_blank" rel="noopener">NHFD PDF</a>
+      </li>
+      <li>
+        Simunovic N, Devereaux PJ, Sprague S, et al. Effect of early surgery after hip fracture on mortality and complications: systematic review and meta-analysis.
+        <i>CMAJ</i> 2010;182(15):1609–1616.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/20837683/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        Moja L, Piatti A, Pecoraro V, et al. Timing matters in hip fracture surgery: patients operated within 48 hours have better outcomes: a meta-analysis and meta-regression of over 190,000 patients.
+        <i>PLoS One</i> 2012;7(10):e46175. doi:10.1371/journal.pone.0046175.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/23056256/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        Kim HC, Park JH, Song JM, et al. Safety of early orthopedic surgery in patients with intermediate/low- or low-risk pulmonary embolism.
+        <i>J Thorac Dis</i> 2020;12(3):232–239. doi:10.21037/jtd.2020.01.54.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/32274089/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        Markel A, Manzo RA, Bergelin RO, Strandness DE. Pattern and distribution of thrombi in acute venous thrombosis.
+        <i>Arch Surg</i> 1992;127(3):305–309.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/1531893/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        Kakkar VV, Howe CT, Flanc C, Clarke MB. Natural history of postoperative deep-vein thrombosis.
+        <i>Lancet</i> 1969;2(7614):230–232.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/4182919/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        Prandoni P, Villalta S, Bagatella P, et al. Recurrent thromboembolism and bleeding complications during anticoagulant treatment in patients with venous thromboembolism.
+        <i>Thromb Haemost</i> 1997;78(4):116–121.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/9198199/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        Nieto JA, Mora D, Bikdeli B, et al; RIETE Investigators. Thirty-day outcomes in patients with proximal deep vein thrombosis who discontinued anticoagulant therapy prematurely.
+        <i>Thromb Res</i> 2020;189:61–68.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/32179295/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        Trujillo-Santos J, Bikdeli B, Jiménez D, et al; RIETE Investigators. Variation in venous thromboembolism outcomes based on primary cancer site: a RIETE registry analysis.
+        <i>J Thromb Haemost</i> 2024 (Epub ahead of print). PubMed PMID: 40848530.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/40848530/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        Schulman S, Kearon C, Kakkar AK, et al. Extended anticoagulation after venous thromboembolism.
+        <i>N Engl J Med</i> 2005;352:975–986.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/15758007/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        Douketis JD, Spyropoulos AC, Murad MH, et al. Perioperative Management of Antithrombotic Therapy: An American College of Chest Physicians Clinical Practice Guideline.
+        <i>Chest</i> 2022;162(5):e207–e243. doi:10.1016/j.chest.2022.07.025.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/35964704/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        Keeling D, Tait RC, Watson H, et al. Peri-operative management of anticoagulation and antiplatelet therapy.
+        <i>Br J Haematol</i> 2016;175(4):602–613. doi:10.1111/bjh.14344.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/27706839/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        Kietaibl S, Ferrandis R, Godier A, et al. Regional anaesthesia in patients on antithrombotic drugs: Joint ESAIC/ESRA guidelines.
+        <i>Eur J Anaesthesiol</i> 2022;39(2):100–132. doi:10.1097/EJA.0000000000001600.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/34980845/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        Mismetti P, Laporte S, Pellerin O, et al. Effect of a retrievable inferior vena cava filter plus anticoagulation vs anticoagulation alone on risk of recurrent pulmonary embolism: a randomized clinical trial (PREPIC2).
+        <i>JAMA</i> 2015;313(16):1627–1635. doi:10.1001/jama.2015.3780.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/25919526/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        PREPIC Study Group. Eight-year follow-up of patients with permanent vena cava filters in the prevention of pulmonary embolism: the PREPIC randomized study.
+        <i>Circulation</i> 2005;112(3):416–422. doi:10.1161/CIRCULATIONAHA.104.512834.
+        <a href="https://pubmed.ncbi.nlm.nih.gov/16009794/" target="_blank" rel="noopener">PubMed</a>
+      </li>
+      <li>
+        US Food and Drug Administration. Removing retrievable inferior vena cava filters: FDA Safety Communication. 2014.
+        <a href="https://www.fda.gov/medical-devices/safety-communications/removing-retrievable-inferior-vena-cava-filters-fda-safety-communication" target="_blank" rel="noopener">FDA</a>
+      </li>
+    </ol>
+    <p class="small">
+      <b>Reference policy:</b> This list is intentionally limited to sources that are directly verifiable (major guideline, national standards, PubMed-indexed peer-reviewed studies/trials, and official regulator communications).
+    </p>
+  </div>
+
+  <footer>
+    <p><b>© 2025 Dr Prabhath Fernando MBBS MD FRCP. All rights reserved.</b></p>
+    <p>
+      This governance document supports professional clinical use only. It must be used alongside local policies, MDT judgement, anaesthetic safety rules,
+      and documented clinical reasoning. It does not replace senior decision-making.
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
