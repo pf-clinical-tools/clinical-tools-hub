@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>ISS-Lite (Pragmatic) Calculator — Governance, Methods & Evidence</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+<!-- GOVERNANCE_MARKER_ISS_LITE_V1_3A_LOCKED -->
+<!-- CHANGELOG (v1.3A): purpose softened (escalation prompting/discussion); fixed nested <p> rendering and removed duplicate HR;
+     AIS wording softened (“conceptually consistent”); severity banding clarified as anatomical (not physiological);
+     interpretation thresholds labelled heuristic; added explicit limitation re >3-region moderate injuries; NMTR/TARN wording refined. -->
+
+<style>
+  :root{
+    --bg:#f7f8fa;
+    --card:#ffffff;
+    --text:#111;
+    --muted:#555;
+    --border:#d0d7de;
+    --blue:#2f6fb0;
+    --red:#b42318;
+    --amber:#b36b00;
+    --green:#1b7f3a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--text);
+  }
+  .container{max-width:900px;margin:auto;padding:16px;}
+  h1{font-size:1.6em;margin:0 0 6px;}
+  h2{font-size:1.15em;margin:14px 0 8px;}
+  h3{font-size:1.02em;margin:12px 0 6px;}
+  p{margin:0 0 10px;line-height:1.5;}
+  .muted{color:var(--muted);font-size:0.92em;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px;
+    margin-bottom:14px;
+  }
+  .callout{
+    border-left:4px solid var(--blue);
+    background:#eef5ff;
+    border-radius:8px;
+    padding:10px;
+    margin-top:8px;
+  }
+  ul{margin:6px 0 10px 18px;padding:0;}
+  ol{margin:6px 0 10px 18px;}
+  code{background:#f2f2f2;padding:2px 6px;border-radius:6px;}
+  .hr{border-top:1px dashed var(--border); margin:10px 0;}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>ISS-Lite (Pragmatic) Trauma Severity Calculator</h1>
+  <p class="muted">Governance, Methods &amp; Evidence (v1.3A — locked; aligns with Tool v1.6)</p>
+
+  <div class="card">
+    <h2>Purpose</h2>
+    <p>
+      ISS-Lite is a clinician-facing <strong>bedside decision-support aid</strong> intended to help structure thinking about
+      overall injury burden using simplified severity bands (0–5). It is designed to support
+      <strong>education, structured communication, and escalation prompting (and structured escalation discussion)</strong>
+      in real-time clinical settings.
+    </p>
+    <div class="callout">
+      <strong>Critical governance statement:</strong> ISS-Lite is <strong>not</strong> formal Injury Severity Score (ISS) and
+      does <strong>not</strong> constitute Abbreviated Injury Scale (AIS) coding. It must not be used for trauma registry submission,
+      audit reporting, contractual metrics, or as a substitute for specialist clinical judgement.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Scope and intended users</h2>
+    <ul>
+      <li>Intended users: clinicians involved in acute trauma assessment and inpatient trauma care (ED, acute medicine, trauma teams, orthopaedics/orthogeriatrics).</li>
+      <li>Use setting: bedside assessment, handover, MDT communication, and escalation prompting.</li>
+      <li>Not intended for: NMTR/registry submission, AIS/ISS coding workflows, benchmarking, or research datasets without separate validation.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>How the tool works</h2>
+
+    <h3>User interface (head-to-toe layout)</h3>
+    <p>
+      For usability, the tool presents body regions in a head-to-toe sequence and separates spinal regions:
+      Head/Brain, Face, Cervical spine, Chest, Thoracic spine, Abdomen/Pelvic contents, Lumbar spine,
+      Extremities/Pelvic girdle, External.
+    </p>
+
+    <h3>Core method (ISS-style mathematics, without claiming AIS coding)</h3>
+    <p>
+      ISS-Lite uses clinician-selected severity bands (0–5) as a pragmatic proxy for anatomical injury burden.
+      After grouping back to six canonical regions, it identifies the <strong>three highest</strong> regional severities and
+      applies the ISS-style calculation:
+      <code>ISS-Lite = a² + b² + c²</code>.
+    </p>
+
+    <p>
+      <strong>Why use the top three, squared?</strong>
+      Canonical ISS summarises multi-injury anatomical burden by taking the three most severely injured body regions.
+      This design reflects the practical reality that overall risk and resource need are usually driven by the most severe injuries,
+      while minor additional injuries contribute relatively less.
+      Squaring the severity values means that increasing severity has a disproportionately larger contribution to the total score,
+      reducing false equivalence between different injury patterns.
+      ISS-Lite mirrors this mathematical structure (top-three selection and squared-sum) but does not claim equivalence,
+      because ISS-Lite uses pragmatic bedside severity bands rather than formal AIS-coded injuries and does not generate registry-valid ISS.
+    </p>
+
+    <div class="callout">
+      <strong>ISS structural alignment statement:</strong><br>
+      ISS-Lite aligns with the canonical mathematical structure of the Injury Severity Score (ISS),
+      as originally described by Baker et&nbsp;al. and operationalised within AIS-based trauma scoring frameworks.
+      Specifically, it applies the six anatomical region model and calculates the squared sum of the
+      three highest regional severities (<code>a² + b² + c²</code>).
+      <br><br>
+      However, ISS-Lite does not perform formal Abbreviated Injury Scale (AIS) coding,
+      does not assign AIS dictionary codes, and does not generate registry-valid ISS values.
+      Its alignment is structural (regional grouping and mathematical method) rather than
+      definitional (AIS injury coding or NMTR registry processes).
+    </div>
+
+    <div class="hr"></div>
+
+    <h3>Six-region behaviour retained (not 9)</h3>
+    <p>
+      <strong>Canonical ISS is built on six anatomical regions</strong> (Head/Neck, Face, Chest, Abdomen/Pelvic contents,
+      Extremities/Pelvic girdle, External). ISS-Lite intentionally retains this <strong>six-region behaviour when calculating
+      the severity score</strong>, even though the bedside interface divides the body into <strong>nine</strong> selectable regions
+      to improve clarity and reduce misclassification (particularly for spinal injuries).
+    </p>
+    <p>
+      The additional spine dropdowns are present for bedside usability and to reduce misclassification risk
+      (i.e., “where do I put this spinal injury?”). They <strong>do not create additional independent scoring regions</strong>.
+      Instead, spine selections are <strong>grouped back into the canonical six-region structure</strong> before the top-three
+      values are selected and summed.
+    </p>
+
+    <div class="callout">
+      <strong>Important governance note (verbatim):</strong><br>
+      Spinal regions are separated for usability.
+      For ISS-Lite calculation, cervical spine is grouped with Head/Neck, and thoracic/lumbar spine are grouped with Extremities,
+      <strong>conceptually consistent with AIS regional grouping principles</strong>. The highest severity within each grouped region is used.
+    </div>
+
+    <h3>Grouping rule used by the calculator</h3>
+    <ul>
+      <li><strong>Head/Neck group</strong> = max(Head/Brain, Cervical spine)</li>
+      <li><strong>Extremities group</strong> = max(Extremities/Pelvic girdle, Thoracic spine, Lumbar spine)</li>
+      <li>Other regions are unchanged: Face, Chest, Abdomen/Pelvic contents, External</li>
+    </ul>
+
+    <p>
+      The ISS-Lite calculation then takes the <strong>top three</strong> from these <strong>six grouped regions</strong>,
+      squares them, and sums them.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Severity banding (0–5) and uncertainty handling</h2>
+
+    <p>
+      Each region uses a pragmatic clinician-selected severity band from <strong>0 to 5</strong>.
+      These bands are supported by embedded examples intended to improve consistency in bedside use.
+      They are deliberately conservative and designed to reflect increasing <strong>anatomical injury burden</strong>
+      (rather than physiological derangement), but they are <strong>not presented as formal mappings to AIS codes</strong>.
+    </p>
+
+    <h3>Why severity is limited to 0–5 (and excludes 6)</h3>
+
+    <p>
+      In formal Abbreviated Injury Scale (AIS) methodology, severity ranges from 1 to 6,
+      where <strong>AIS 6 represents “maximal / currently untreatable” injury</strong>.
+      In canonical ISS calculation, the presence of any AIS 6 injury automatically results in ISS = 75.
+    </p>
+
+    <p>
+      ISS-Lite deliberately excludes a severity level of 6. This is an intentional governance boundary
+      and not an omission.
+    </p>
+
+    <div class="callout">
+      <strong>Rationale for excluding severity 6:</strong>
+      <ul>
+        <li>ISS-Lite does not perform formal AIS coding.</li>
+        <li>Determination of “unsurvivable” injury requires specialist coding expertise and often retrospective registry validation.</li>
+        <li>Bedside clinicians should avoid premature assignment of futility based solely on anatomical estimation.</li>
+        <li>Including a “6” category could imply equivalence with AIS methodology, which ISS-Lite explicitly does not claim.</li>
+      </ul>
+    </div>
+
+    <p>
+      Injuries that might correspond to AIS 6 in formal coding should be captured within
+      <strong>band 5 (critical)</strong> in ISS-Lite and managed according to physiology,
+      trajectory, and specialist trauma input.
+    </p>
+
+    <h3>Mathematical implications</h3>
+
+    <p>
+      Because ISS-Lite uses a maximum band of 5, the highest possible score is:
+      <code>5² + 5² + 5² = 75</code>.
+    </p>
+
+    <p class="muted">
+      This preserves the canonical maximum value seen in formal ISS,
+      while maintaining a clear methodological separation from AIS-coded injury scoring.
+    </p>
+
+    <h3>Uncertainty handling rule</h3>
+
+    <div class="callout">
+      <strong>Safety principle:</strong>
+      If uncertain between two categories, users are advised to select the higher band
+      <em>or</em> escalate for senior or specialist review.
+      This conservative bias is an intentional safeguard to reduce under-triage risk.
+    </div>
+
+    <p>
+      Severity selection should always be interpreted alongside physiology,
+      mechanism, frailty, anticoagulation status, and clinical trajectory.
+      ISS-Lite does not replace ongoing reassessment.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Interpretation prompts</h2>
+    <p class="muted">These prompts are conservative and intended to support escalation thinking only.</p>
+    <ul>
+      <li><strong>ISS-Lite ≥16</strong>: escalation prompt consistent with commonly used “major trauma” thresholds in registry literature; does not substitute for local trauma team activation criteria.</li>
+      <li><strong>ISS-Lite 9–15</strong>: moderate injury burden; lower threshold to escalate if uncertainty or clinical concern.</li>
+      <li><strong>ISS-Lite &lt;9</strong>: lower injury burden; does not exclude major risk from physiology, frailty, or anticoagulation.</li>
+    </ul>
+    <p class="muted">
+      These thresholds are <strong>heuristic prompts</strong> to support structured escalation discussion; they do not replace local trauma activation criteria,
+      senior clinical judgement, or evolving clinical reassessment.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Explicit limitations and exclusions (read carefully)</h2>
+    <ul>
+      <li>ISS-Lite is <strong>not</strong> AIS-coded and has not been validated against formal ISS.</li>
+      <li><strong>ISS-Lite values must not be numerically equated with registry-calculated ISS values</strong>, even when similar numbers are produced.</li>
+      <li>ISS-Lite has not been prospectively validated against formal ISS, mortality, or outcome prediction models.</li>
+      <li><strong>ISS-Lite is not a mortality prediction tool</strong> and should not be used to estimate probability of survival.</li>
+      <li>Must not be used for NMTR/registry submission, audit reporting, contractual metrics, or coding purposes.</li>
+      <li>Does not incorporate physiology (e.g., GCS, BP, lactate), airway threat, shock, mechanism, or time course.</li>
+      <li>Does not adjust for age, frailty, anticoagulation/antiplatelets, comorbidity, or competing mortality risk.</li>
+      <li>Does not replace imaging review, specialist interpretation, or evolving clinical reassessment.</li>
+      <li>Embedded examples are pragmatic and intentionally conservative; they may not match local registry coding in edge cases.</li>
+      <li><strong>May under-represent injury burden</strong> when multiple moderate injuries occur across more than three regions, because (like canonical ISS) it is dominated by the top three region severities.</li>
+    </ul>
+    <div class="callout">
+      <strong>Knowledge gap acknowledgement:</strong><br>
+      There is currently no validated, widely adopted bedside substitute for formal AIS/ISS coding.
+      ISS-Lite is offered transparently as a pragmatic guide, not a surrogate standard.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>NMTR and registry alignment statement (scope-limited)</h2>
+    <p>
+      The ISS-Lite calculator is designed to remain conceptually compatible with the <strong>six-region ISS/AIS framework</strong>
+      used in UK trauma registry workflows (including NMTR and previously TARN), while providing a bedside-friendly interface that separates
+      the spine into cervical/thoracic/lumbar selections for clarity.
+    </p>
+    <div class="callout">
+      <strong>Important limitation:</strong> “Alignment” here refers to the <strong>regional grouping principle and overall ISS-style structure</strong>
+      (six regions; top-three squared-sum approach) — not to AIS code assignment, NMTR inclusion decisions, or registry case definitions.
+      ISS-Lite does not perform AIS coding and must not be used for NMTR submission or audit.
+    </div>
+    <p class="muted">
+      Public NMTR materials describe the programme, inclusion framework and data collection scope, and the NMTR data collection standard
+      is published as an update to ISB 1606 (DAPB1606, current catalogue record).
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Evidence and references (for verification and scrutiny)</h2>
+    <p class="muted">
+      References are provided to allow verification of the canonical ISS/AIS concepts and to support transparent scrutiny.
+      Their inclusion does not imply that ISS-Lite reproduces AIS coding or registry definitions.
+    </p>
+    <ol>
+      <li>
+        Baker SP, O’Neill B, Haddon W, Long WB.
+        The Injury Severity Score: a method for describing patients with multiple injuries and evaluating emergency care.
+        <em>Journal of Trauma</em>. 1974;14:187–196.
+      </li>
+      <li>
+        Association for the Advancement of Automotive Medicine (AAAM).
+        <em>Abbreviated Injury Scale (AIS) 2005 – Update 2008</em>. Barrington, IL: AAAM.
+      </li>
+      <li>
+        NHS England. <em>National major trauma registry (NMTR)</em> (programme overview and scope). (Accessed 2026-02-15.)
+      </li>
+      <li>
+        NHS England. <em>NMTR — About data collection</em> (inclusion framework and submission scope). (Accessed 2026-02-15.)
+      </li>
+      <li>
+        NHS England Standards Directory. <em>National Major Trauma Registry Data Collection — Update to ISB 1606</em>
+        (Reference code DAPB1606; catalogue version 1.0.1 published 2025-12-01). (Accessed 2026-02-15.)
+      </li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Copyright and permitted use</h2>
+    <p>
+      © 2026 Dr Prabhath Fernando MBBS MD FRCP.
+      This tool and associated documentation are provided for non-commercial educational and clinical decision-support use only.
+      Local adaptation is permitted with attribution. Commercial use or redistribution without permission is not permitted.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Version control</h2>
+    <ul>
+      <li>Tool marker (in tool HTML): <code>TOOL_MARKER_ISS_LITE_PRAGMATIC_V1_6_BEDSIDE_APPROXIMATION_5_BAND_RATIONALE_GOVERNANCE_TIGHT</code></li>
+      <li>Governance marker (this file): <code>GOVERNANCE_MARKER_ISS_LITE_V1_3A_LOCKED</code></li>
+      <li>Any updates should preserve a locked copy and increment the marker to prevent ambiguity in clinical environments.</li>
+    </ul>
+  </div>
+
+  <p class="muted" style="margin-top:16px;">
+    Author: Dr Prabhath Fernando MBBS MD FRCP (project owner).<br>
+    Status: Draft for local scrutiny and governance approval (education-first deployment recommended).<br>
+    Last updated: 2026-02-15.
+  </p>
+
+</div>
+</body>
+</html>
