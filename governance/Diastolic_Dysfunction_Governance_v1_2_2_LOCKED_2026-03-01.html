@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Governance & Evidence — Clinical Interpretation of Diastolic Function in Suspected Heart Failure</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<style>
+  :root{
+    --bg:#f4f6f8;
+    --card:#ffffff;
+    --text:#111827;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+    --shadow:0 6px 18px rgba(0,0,0,.08);
+    --radius:14px;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    padding:18px;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    line-height:1.65;
+  }
+  .wrap{ max-width:980px; margin:0 auto; }
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:22px;
+    margin-top:16px;
+    box-shadow:var(--shadow);
+  }
+  .header{
+    background:linear-gradient(135deg,#0f766e,#064e3b);
+    color:#ffffff;
+    border:0;
+  }
+  h1{
+    margin:0 0 6px 0;
+    font-size:1.55rem;
+    line-height:1.25;
+    letter-spacing:.2px;
+  }
+  .subhead{
+    margin:0;
+    font-size:1rem;
+    opacity:.95;
+  }
+  .meta{
+    margin-top:14px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:12px;
+    padding:12px 14px;
+  }
+  .meta table{
+    width:100%;
+    border-collapse:collapse;
+    color:#ffffff;
+    font-size:.95rem;
+  }
+  .meta th{
+    text-align:left;
+    font-weight:800;
+    padding:6px 10px 6px 0;
+    width:240px;
+    vertical-align:top;
+    color:#e5e7eb;
+  }
+  .meta td{
+    padding:6px 0;
+    vertical-align:top;
+  }
+
+  .doc p{ margin:10px 0; }
+
+  .section{
+    margin-top:22px;
+    padding-top:18px;
+    border-top:2px solid var(--border);
+  }
+  .section:first-child{
+    margin-top:0;
+    padding-top:0;
+    border-top:0;
+  }
+
+  .doc .heading{
+    font-weight:900;
+    margin:0;
+    margin-bottom:12px;
+    padding:14px 16px;
+    border:1px solid #0f766e;
+    border-left:10px solid #0f766e;
+    border-radius:14px;
+    background:#e6fffb;
+    color:#064e3b;
+    font-size:1.25rem;
+    line-height:1.25;
+  }
+  .doc .subheading{
+    font-weight:900;
+    margin-top:18px;
+    margin-bottom:10px;
+    padding:10px 14px;
+    border-left:8px solid #0f766e;
+    background:#d1fae5;
+    border-radius:12px;
+    color:#064e3b;
+  }
+
+  .doc ul{
+    margin:10px 0 10px 24px;
+    padding:0;
+  }
+  .doc li{ margin:8px 0; }
+
+  .refWrap{
+    margin-top:26px;
+    padding-top:20px;
+    border-top:3px solid var(--border);
+  }
+  .refTitle{
+    font-weight:900;
+    margin:0 0 14px 0;
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:#f9fafb;
+  }
+
+  footer{
+    margin-top:20px;
+    color:var(--muted);
+    font-size:.95rem;
+  }
+
+  .refList{ margin-left: 20px; }
+  .refList li{ line-height:1.55; }
+
+  .changelog{
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:12px 14px;
+    background:#f9fafb;
+  }
+  .changelog strong{ display:block; margin-bottom:6px; }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="card header">
+    <div style="font-weight:900; font-size:1.05rem; margin-bottom:6px;">Governance &amp; Evidence</div>
+    <h1>Clinical Interpretation of Diastolic Function in Suspected Heart Failure</h1>
+    <p class="subhead">NICE-aligned documentation support framework (Tool v1.2.2 LOCKED)</p>
+
+    <div class="meta">
+      <table>
+        <tr>
+          <th>Author</th>
+          <td>Dr Prabhath Fernando MBBS MD FRCP</td>
+        </tr>
+        <tr>
+          <th>Associated digital tool</th>
+          <td>Clinical Interpretation of Diastolic Function in Suspected Heart Failure (Tool v1.2.2 LOCKED)</td>
+        </tr>
+        <tr>
+          <th>Intended setting</th>
+          <td>Inpatient ward review, outpatient follow-up, MDT synthesis, discharge documentation.</td>
+        </tr>
+        <tr>
+          <th>Intended users</th>
+          <td>Acute/general physicians; geriatricians; clinicians in ambulatory care and ward settings; MDT participants.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card doc">
+
+    <div class="section">
+      <p><strong>Status: Governance document aligned to the authoritative live implementation.</strong></p>
+      <p><strong>Purpose of this page: Governance, transparency, and audit support. This tool does not replace clinical judgement or formal echocardiography reporting.</strong></p>
+
+      <div class="changelog" style="margin-top:12px;">
+        <strong>Change log (v1.2.2)</strong>
+        <ul style="margin:6px 0 0 18px;">
+          <li>Doppler wording clarified to state explicitly that <em>interpretable</em> Doppler indices may provide supportive evidence of elevated filling pressures (without grading).</li>
+          <li>No change to the four headline outcome states or safety safeguards (NP-low cap; valve-dominant overrides).</li>
+          <li>No diastolic grading logic introduced.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <p class="heading">1. Introduction</p>
+
+      <p>Heart failure is a clinical syndrome. In patients with preserved (≥50%) or mildly reduced (41–49%) left ventricular ejection fraction (LVEF), diagnosis is frequently probabilistic and requires integration of symptoms/signs, natriuretic peptides, and imaging findings.<sup>1</sup> Echocardiographic “diastolic” indices and structural surrogates can be informative but are context-dependent, may be neutral at rest, and are often limited by rhythm, valve disease, and technical quality.<sup>2–4</sup></p>
+
+      <p>This tool was developed to support structured clinical documentation in Acute Medicine, Geriatrics, and General Internal Medicine by combining:</p>
+      <ul>
+        <li>a clinical syndrome gate,</li>
+        <li>a strict EF scope gate,</li>
+        <li>structural echocardiographic supportive features (when available), and</li>
+        <li>NICE-aligned natriuretic peptide interpretation.<sup>1</sup></li>
+      </ul>
+
+      <p>It deliberately avoids definitive diagnostic labels and avoids diastolic grading.</p>
+    </div>
+
+    <div class="section">
+      <p class="heading">2. Purpose and intended use</p>
+
+      <p>The tool is intended to:</p>
+      <ul>
+        <li>Support clinical interpretation and documentation of echocardiographic diastolic-relevant context alongside natriuretic peptides in suspected heart failure.</li>
+        <li>Provide copy-ready text for clinical notes/letters summarising probabilistic interpretation.</li>
+        <li>Apply safety-first gating to prevent out-of-scope use (including an EF ≤40% stop rule).</li>
+        <li>Make explicit when interpretation is limited by rhythm/valve disease/technical quality.</li>
+      </ul>
+
+      <p><strong>Scope Boundaries</strong></p>
+      <ul>
+        <li>This framework supports probabilistic documentation in suspected HF with EF ≥41%.</li>
+        <li>It does not replace formal echocardiography reporting.</li>
+        <li>It does not assign diastolic grade or invasive filling pressures.</li>
+        <li>It does not independently establish a diagnosis of HFpEF.</li>
+        <li>Management decisions remain clinician-led; the tool does not mandate therapy.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <p class="heading">3. Audience and clinical settings</p>
+
+      <p><strong>Intended users:</strong></p>
+      <p>Acute/general physicians; geriatricians; clinicians in ambulatory care and ward settings; MDT participants.</p>
+
+      <p><strong>Intended settings:</strong></p>
+      <p>Inpatient ward review, outpatient follow-up, MDT synthesis, discharge documentation.</p>
+
+      <p><strong>Scope clarification:</strong><br>
+      This tool does not guide echocardiographic acquisition. It supports interpretation only of already acquired and reported findings and measured natriuretic peptides.</p>
+    </div>
+
+    <div class="section">
+      <p class="heading">4. Scope gates and safety controls</p>
+
+      <p>The tool includes non-bypassable safety gates:</p>
+
+      <p class="subheading">4.1 Module 1 — Clinical HF syndrome gate</p>
+
+      <p>User must confirm both:</p>
+      <ul>
+        <li>Symptoms/signs consistent with a heart failure syndrome, and</li>
+        <li>Heart failure physiology is considered a likely or significant contributor to the presentation (recognising potential co-contributors).</li>
+      </ul>
+
+      <p>If either is not met, the tool disables downstream modules and produces no interpretive output.</p>
+
+      <p>Rationale: Heart failure is a clinical syndrome; tests provide supportive probabilistic evidence but do not replace clinical assessment. In older adults, dyspnoea is frequently multifactorial; this gate confirms that heart failure remains a clinically meaningful contributor warranting natriuretic peptide and echocardiographic synthesis.<sup>1</sup></p>
+
+      <p class="subheading">4.2 EF gate — scope control</p>
+
+      <p>User must select one EF category:</p>
+      <ul>
+        <li>EF ≥50% (preserved EF) → in scope</li>
+        <li>EF 41–49% (mildly reduced EF) → in scope</li>
+        <li>EF ≤40% (reduced EF / HFrEF) → STOP (tool does not apply)</li>
+      </ul>
+
+      <p>If EF ≤40% is selected, the tool blocks downstream output and states that this pathway does not apply.</p>
+
+      <p>Governance rationale: tool is designed specifically for suspected HF with preserved/mildly reduced EF and is not a HFrEF management tool.<sup>1,3</sup></p>
+    </div>
+
+    <div class="section">
+      <p class="heading">5. Echocardiographic interpretability module</p>
+
+      <p class="subheading">5.1 Interpretability flags collected</p>
+
+      <p>The tool records context that limits diastolic attribution and/or dominance of alternative physiology:</p>
+      <ul>
+        <li>Rhythm: sinus vs atrial fibrillation (AF)</li>
+        <li>Mitral regurgitation (MR) severity (none/trivial, mild, moderate, severe)</li>
+        <li>Aortic stenosis (AS) severity (none/mild, moderate, severe)</li>
+        <li>Image/Doppler quality: adequate vs limited</li>
+        <li>Timing/fusion: pacing rhythm, tachycardia, E–A fusion (present vs not)</li>
+      </ul>
+
+      <p class="subheading">5.2 How these flags are used</p>
+
+      <p>The tool does not assign diastolic grade in any circumstance.</p>
+
+      <p>When limitations are present, the tool generates an interpretability statement noting that grading is not assigned due to the recorded limitation(s), and it proceeds using EF + structural context + natriuretic peptides (NICE-aligned).</p>
+
+      <p class="subheading">5.3 AF handling</p>
+
+      <p>AF is treated as non-interpretable for HFpEF attribution within this framework; AF is recorded for completeness and documentation context. This is a conservative stance consistent with guideline cautions about applying standard diastolic grading logic in AF.<sup>2,3</sup></p>
+
+      <p class="subheading">5.4 Dominant valve physiology safeguards</p>
+
+      <p>Significant MR (moderate/severe) triggers an MR-dominant output pathway:</p>
+      <ul>
+        <li>states grading is not assigned due to significant MR,</li>
+        <li>cautions that structural surrogates and NP elevation may reflect valvular volume overload/atrial stretch,</li>
+        <li>concludes HFpEF attribution is indeterminate within this framework.</li>
+      </ul>
+
+      <p>Moderate/severe AS triggers an AS-dominant output pathway:</p>
+      <ul>
+        <li>treated as dominant valve physiology,</li>
+        <li>cautions that structural surrogates and NP elevation may reflect pressure overload from AS,</li>
+        <li>concludes HFpEF attribution is indeterminate within this framework.</li>
+      </ul>
+
+      <p>These safeguards are intended to reduce misattribution of symptoms to HFpEF when dominant valve disease is present.<sup>3,5</sup></p>
+    </div>
+
+    <div class="section">
+      <p class="heading">6. Structural echocardiographic supportive features</p>
+
+      <p>The tool uses a limited, transparent set of structural/context features as supportive (not diagnostic) evidence.</p>
+
+      <p class="subheading">6.1 Inputs and thresholds</p>
+
+      <p><strong>Left atrial size</strong></p>
+      <p>LAVI entered numerically (ml/m<sup>2</sup>); reference normal ≤34</p>
+      <p>OR qualitative “LA enlargement reported” (when no LAVI available)</p>
+
+      <p><strong>LV wall thickness</strong></p>
+      <p>Septal thickness (IVS, mm) and/or posterior wall thickness (PWT, mm)</p>
+      <p>Tool uses: normal ≤10 mm; ≥11 mm supports LV wall thickening phenotype</p>
+
+      <p><strong>Pulmonary pressure surrogates (optional)</strong></p>
+      <p>TR Vmax threshold: &gt;2.8 m/s</p>
+      <p>PASP threshold: &gt;35 mmHg</p>
+
+      <p><strong>Optional Doppler context (supportive when interpretable; never grading)</strong></p>
+      <p>The tool may record Doppler parameters (e′ velocity, E/e′, E/A ratio, deceleration time) to support structured clinical interpretation and documentation. These parameters are not used to assign diastolic grade and do not independently establish a HFpEF phenotype within this framework.<p>
+      <p>Where rhythm, significant valve disease, pacing/fusion, or technical limitation is present, Doppler parameters are recorded for completeness but are <strong>not</strong> used for HFpEF attribution within this framework.</p>
+      <p><strong>When Doppler parameters are interpretable</strong> (sinus rhythm, no significant MR, no moderate/severe AS, adequate image quality, no pacing/fusion), abnormal findings (for example raised E/e′ or reduced e′ velocities) may provide supportive evidence of elevated filling pressures within the overall clinical context. However, Doppler findings do <strong>not</strong> independently establish a HFpEF phenotype, do <strong>not</strong> override low natriuretic peptide values, and do <strong>not</strong> supersede valve-dominant safeguards.<sup>2,6</sup></p>
+
+      <p class="subheading">6.2 “Structural support” rule</p>
+
+      <p>Structural supportive context is considered present if one or more of the following are present:</p>
+      <ul>
+        <li>LA support: (LAVI &gt;34) OR qualitative LA enlargement ticked</li>
+        <li>LVH/pressure phenotype support: IVS ≥11 or PWT ≥11</li>
+        <li>Pulmonary pressure support: TR Vmax &gt;2.8 OR PASP &gt;35</li>
+      </ul>
+
+      <p>Doppler parameters, when interpretable, may provide additional supportive context but do not override natriuretic peptide tiering and are not used to assign diastolic grade.</p>
+
+      <p>The tool generates copy-ready snippets describing each entered element and explicitly states that normal resting findings do not exclude exertional or load/heart-rate dependent HFpEF.</p>
+    </div>
+
+    <div class="section">
+      <p class="heading">7. Natriuretic peptides module</p>
+
+      <p class="subheading">7.1 Inputs</p>
+      <ul>
+        <li>BNP (pg/mL) and/or NT-proBNP (pg/mL) numeric entry</li>
+        <li>Context checkboxes (AF present; CKD present) — used as interpretive context text only, not for threshold adjustment.</li>
+      </ul>
+
+      <p class="subheading">7.2 Tier derivation</p>
+      <ul>
+        <li>Prefer NT-proBNP if entered; otherwise use BNP.</li>
+        <li>If neither BNP nor NT-proBNP is entered → NP tier is unknown.</li>
+      </ul>
+
+      <p class="subheading">7.3 Thresholds<sup>1</sup></p>
+
+      <p><strong>NT-proBNP</strong></p>
+      <ul>
+        <li>&lt;400 = low</li>
+        <li>400–2000 = intermediate</li>
+        <li>≥2000 = high</li>
+      </ul>
+
+      <p><strong>BNP</strong></p>
+      <ul>
+        <li>&lt;100 = low</li>
+        <li>100–399 = intermediate</li>
+        <li>≥400 = high</li>
+      </ul>
+
+      <p class="subheading">7.4 Safety rule</p>
+      <p>If NP tier is low, the tool explicitly states that this reduces HF probability and that echo surrogates should not override low NP within this framework.</p>
+
+      <p class="subheading">7.5 NP missing rule</p>
+      <p>If NP is unknown (neither BNP nor NT-proBNP entered):</p>
+      <ul>
+        <li>the tool does not generate “supportive HFpEF” language,</li>
+        <li>and does not generate SGLT2 therapy text.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <p class="heading">8. Synthesis logic and outputs</p>
+
+      <p class="subheading">8.1 Output components</p>
+      <p>The tool produces:</p>
+      <ul>
+        <li>Interpretability statement (copy-ready)</li>
+        <li>Echo supportive snippet block (copy-ready; if data entered)</li>
+        <li>NP interpretation block (copy-ready; if data entered)</li>
+        <li>Final “INTERPRETIVE DOCUMENTATION” block (copyable)</li>
+        <li>Separate “TREATMENT GUIDANCE (context-dependent, non-directive)” block (not copied)</li>
+      </ul>
+
+      <p class="subheading">8.2 HFpEF attribution categories used internally</p>
+      <p>After passing gates, and only when not in MR-dominant or AS-dominant pathways, the tool frames documentation as one of:</p>
+
+      <p><strong>NP unavailable → Indeterminate</strong><br>
+      Output emphasises NP missing and states the framework will not produce supportive HFpEF language without NP values.</p>
+
+      <p><strong>NP low → Not supportive (low NP cap)</strong><br>
+      Output emphasises reduced probability of HF and advises consideration of alternative explanations and reassessment if clinical evolution occurs. Structural or Doppler abnormalities do not override a low natriuretic peptide tier within this framework.</p>
+
+      <p><strong>NP not low + structural support absent → Indeterminate</strong><br>
+      Output emphasises discordance: biomarkers not low but structural echo neutral; HFpEF probability remains indeterminate in this framework.</p>
+
+      <p><strong>NP not low + structural support present → Supportive HFpEF phenotype (probabilistic)</strong><br>
+      Output states that overall picture may be supportive of HFpEF phenotype, explicitly probabilistic and contextual. Doppler variables, when interpretable, may strengthen contextual support but do not independently determine phenotype attribution and are not used to assign formal diastolic grade.</p>
+
+      <p class="subheading">8.3 Valve disease overrides</p>
+      <ul>
+        <li>Significant MR (moderate/severe) → MR-dominant pathway; HFpEF attribution indeterminate</li>
+        <li>Moderate/severe AS → AS-dominant pathway; HFpEF attribution indeterminate irrespective of other inputs</li>
+      </ul>
+
+      <p class="subheading">8.4 Conditional SGLT2 text</p>
+      <p>The tool displays SGLT2 consideration text only when all are met:</p>
+      <ul>
+        <li>EF category is ≥50 or 41–49, AND</li>
+        <li>NP tier is high, AND</li>
+        <li>structural support is present, AND</li>
+        <li>moderate/severe AS is not present (AS safeguard)</li>
+      </ul>
+
+      <p>This appears in the separate treatment block (not copied) and is framed as consideration with renal function review/monitoring, not as a mandate.<sup>7,8</sup></p>
+    </div>
+
+    <div class="section">
+      <p class="heading">9. Limitations</p>
+
+      <p>This framework is intentionally conservative and documentation-focused.</p>
+
+      <p><strong>Key limitations:</strong></p>
+      <ul>
+        <li>It does not assign diastolic grade or filling pressure.<sup>2,6</sup></li>
+        <li>It does not diagnose HFpEF; it provides probabilistic synthesis aligned to NICE principles for HF assessment.<sup>1</sup></li>
+        <li>Resting echo may be neutral in exertional/load-dependent HFpEF; normal LA size or pulmonary pressure surrogates do not exclude HFpEF.<sup>3,4</sup></li>
+        <li>AF, significant MR, and moderate/severe AS materially limit attribution of symptoms to HFpEF within this framework; the tool defaults to indeterminate in these contexts.<sup>2,5</sup></li>
+        <li>The structural “support” rule is intentionally binary and conservative; it is not a comprehensive echo phenotype assessment.</li>
+      </ul>
+
+      <p>Markers of systemic congestion (for example pleural effusions) and right-sided structural changes (for example right atrial enlargement) are not used as structural determinants of a HFpEF phenotype within this framework, as they may reflect right-sided or pulmonary pathology.</p>
+    </div>
+
+    <div class="section">
+      <p class="heading">10. Governance, safety, and version control</p>
+
+      <p>The live tool implementation (v1.2.2 LOCKED) is treated as authoritative.</p>
+
+      <p>Any future modifications require:</p>
+      <ul>
+        <li>explicit version increment,</li>
+        <li>documented change log,</li>
+        <li>governance review for logic drift,</li>
+        <li>preservation of locked historical versions (internal archive).</li>
+      </ul>
+
+      <p>Clinical safety posture: This tool is designed to reduce over-interpretation and false certainty by enforcing gates, flagging non-interpretable contexts, and preventing supportive HFpEF language in the absence of NP data or when NP is low.</p>
+    </div>
+
+    <div class="section">
+      <p class="heading">11. Disclaimer</p>
+
+      <p>This is a clinical decision-support and documentation tool. It does not replace clinician judgement, formal echocardiography reporting, specialist cardiology input, or invasive assessment where indicated. Responsibility for clinical decisions remains with the treating clinician.</p>
+
+      <div class="refWrap">
+        <p class="refTitle">References</p>
+        <ol class="refList" style="margin:10px 0 0 20px; padding:0;">
+          <li style="margin:10px 0;">National Institute for Health and Care Excellence. Chronic heart failure in adults: diagnosis and management (NG106). London: NICE; 2018.</li>
+          <li style="margin:10px 0;">British Society of Echocardiography. Robinson S, Ring L, Oxborough D, et al. The assessment of left ventricular diastolic function: guidance and recommendations from the British Society of Echocardiography. Echo Res Pract. 2024;11:16. doi:10.1186/s44156-024-00051-2.</li>
+          <li style="margin:10px 0;">European Society of Cardiology. McDonagh TA, Metra M, Adamo M, et al. 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure. Eur Heart J. 2021;42:3599–3726.</li>
+          <li style="margin:10px 0;">Bozkurt B, Coats AJS, Tsutsui H, et al. Universal definition and classification of heart failure. J Card Fail. 2021;27:387–413.</li>
+          <li style="margin:10px 0;">Obokata M, Reddy YNV, Borlaug BA. Role of diastolic stress testing in heart failure with preserved ejection fraction. Circulation. 2017;135:825–838.</li>
+          <li style="margin:10px 0;">Nagueh SF, Smiseth OA, Appleton CP, et al. Recommendations for the evaluation of left ventricular diastolic function by echocardiography: an update from the American Society of Echocardiography and the European Association of Cardiovascular Imaging. J Am Soc Echocardiogr. 2016;29:277–314.</li>
+          <li style="margin:10px 0;">Anker SD, Butler J, Filippatos G, et al. Empagliflozin in heart failure with a preserved ejection fraction (EMPEROR-Preserved). N Engl J Med. 2021;385:1451–1461.</li>
+          <li style="margin:10px 0;">Solomon SD, McMurray JJV, Claggett B, et al. Dapagliflozin in heart failure with mildly reduced or preserved ejection fraction (DELIVER). N Engl J Med. 2022;387:1089–1098.</li>
+          <li style="margin:10px 0;">American College of Cardiology / American Heart Association. Otto CM, Nishimura RA, Bonow RO, et al. 2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease. Circulation. 2021;143:e72–e227.</li>
+        </ol>
+      </div>
+
+      <footer>© 2026 Prabhath Fernando MBBS MD FRCP. All rights reserved.</footer>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
