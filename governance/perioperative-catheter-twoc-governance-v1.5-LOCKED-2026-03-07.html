@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Peri-operative Catheterisation &amp; TWOC — Governance, Evidence, Methods (v1.5)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- GOVERNANCE_MARKER_PERIOP_CATH_TWOC_V1_5_LOCKED_2026_03_07 -->
+
+<style>
+  :root{
+    --bg:#f7f8fa;
+    --card:#ffffff;
+    --text:#111;
+    --muted:#555;
+    --line:#e5e7eb;
+    --blue:#005eb8;
+    --bluePale:#eff6ff;
+    --amber:#fff3cd;
+    --amberText:#6b4f00;
+    --green:#d1fae5;
+    --greenText:#065f46;
+    --red:#fee2e2;
+    --redText:#991b1b;
+  }
+
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    margin:0;
+    line-height:1.58;
+  }
+
+  .container{
+    max-width:960px;
+    margin:auto;
+    padding:24px;
+  }
+
+  .card{
+    background:var(--card);
+    border-radius:12px;
+    padding:22px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom:16px;
+  }
+
+  h1{ font-size:1.75rem; margin:0 0 10px 0; }
+  h2{ font-size:1.28rem; margin:26px 0 10px 0; }
+  h3{ font-size:1.05rem; margin:16px 0 8px 0; }
+  p{ margin:9px 0; }
+  ul{ margin:8px 0 8px 20px; padding:0; }
+  li{ margin:5px 0; }
+
+  .meta{
+    font-size:0.93rem;
+    color:#444;
+    margin:8px 0 18px 0;
+  }
+
+  .badge{
+    display:inline-block;
+    padding:5px 10px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.82rem;
+    margin-top:8px;
+  }
+  .badge-amber{ background:var(--amber); color:var(--amberText); }
+  .badge-green{ background:var(--green); color:var(--greenText); }
+  .badge-red{ background:var(--red); color:var(--redText); }
+
+  .callout{
+    border-left:5px solid var(--blue);
+    background:var(--bluePale);
+  }
+
+  .hr{
+    height:1px;
+    background:var(--line);
+    border:none;
+    margin:18px 0;
+  }
+
+  .pillrow{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin:10px 0 14px 0;
+  }
+
+  .pill{
+    background:#f3f4f6;
+    border:1px solid #e5e7eb;
+    border-radius:999px;
+    padding:6px 10px;
+    font-size:0.82rem;
+    font-weight:700;
+    color:#374151;
+  }
+
+  .matrix{
+    display:grid;
+    grid-template-columns: 1.1fr 1fr 1fr 1fr;
+    gap:1px;
+    background:#d1d5db;
+    border-radius:10px;
+    overflow:hidden;
+    margin:14px 0;
+  }
+  .matrix div{
+    background:#fff;
+    padding:10px 12px;
+    font-size:0.9rem;
+  }
+  .matrix .head{
+    background:#f3f4f6;
+    font-weight:800;
+  }
+
+  .confidence{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:10px;
+  }
+  .c-high,.c-mod,.c-lowmod{
+    border-radius:999px;
+    padding:4px 10px;
+    font-size:0.8rem;
+    font-weight:800;
+  }
+  .c-high{ background:var(--green); color:var(--greenText); }
+  .c-mod{ background:var(--amber); color:var(--amberText); }
+  .c-lowmod{ background:#fde68a; color:#7c2d12; }
+
+  details{
+    border:1px solid #e5e7eb;
+    border-radius:10px;
+    padding:12px 14px;
+    margin:12px 0;
+    background:#fcfcfd;
+  }
+  details summary{
+    cursor:pointer;
+    font-weight:800;
+  }
+
+  .refs ol{ padding-left:18px; }
+  .refs li{ margin:9px 0; }
+
+  .small{
+    font-size:0.88rem;
+    color:#555;
+  }
+
+  footer{
+    margin-top:24px;
+    font-size:0.8rem;
+    color:#666;
+    text-align:center;
+  }
+
+  @media (max-width: 760px){
+    .matrix{
+      grid-template-columns: 1fr;
+    }
+    .matrix .head{
+      display:none;
+    }
+    .matrix div{
+      border-bottom:1px solid #eef0f3;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+
+      <h1>Peri-operative Catheterisation and TWOC Decision Aid in Femoral and Pelvic Fracture Patients</h1>
+
+      <div class="meta">
+        <strong>Governance, Evidence, and Methods Document (v1.5)</strong><br>
+        Author: Dr Prabhath Fernando MBBS MD FRCP<br>
+        Tool type: Nursing decision-support tool<br>
+        Clinical domain: Orthogeriatrics / peri-operative care / urinary catheter management<br>
+        Status: Prepared for governance review<br>
+        Version: v1.5 &nbsp;|&nbsp; Date: 2026
+        <div><span class="badge badge-amber">Prepared for review — not yet governance approved</span></div>
+      </div>
+
+      <div class="card callout" style="margin:0 0 16px 0;">
+        <strong>Methodological approach</strong><br>
+        Evidence synthesis with explicit <strong>Evidence–Extrapolation–Interpretation</strong> transparency framework.
+      </div>
+
+      <hr class="hr">
+
+      <h2>1. Background and Rationale</h2>
+      <p>
+        Urinary catheterisation and trial without catheter (TWOC) are common interventions in patients admitted with
+        femoral and pelvic fractures, particularly in the peri-operative period. However, practice is variable, and inappropriate
+        catheter use is associated with recognised harms including catheter-associated urinary tract infection (CAUTI), reduced
+        mobility, delayed rehabilitation, and patient discomfort and distress.<sup>1,2</sup>
+      </p>
+      <p>
+        Conversely, delayed recognition of clinically significant urinary retention can result in bladder over-distension,
+        acute kidney injury, hydronephrosis, and prolonged catheter dependence.<sup>3</sup>
+      </p>
+      <p>
+        Older and frail trauma patients present particular challenges because symptoms of urinary retention are often unreliable.
+        Pain, immobility, delirium, opioid use, and impaired communication may blunt or distort symptom reporting, while
+        physiological reserve is limited.<sup>4,5</sup>
+      </p>
+      <p>
+        This creates a need for structured, conservative, volume-based decision support that can be applied consistently by nursing staff
+        while preserving escalation pathways and clinical judgement.
+      </p>
+
+      <h2>2. Purpose of the Tool</h2>
+      <p>The purpose of this tool is to support safe, auditable bedside decision-making regarding:</p>
+      <ul>
+        <li>when catheterisation is indicated,</li>
+        <li>when catheterisation should be avoided,</li>
+        <li>when TWOC may be attempted, and</li>
+        <li>how TWOC outcomes should be interpreted.</li>
+      </ul>
+      <p>
+        The tool does not replace local policy, senior clinical judgement, or urological advice. It functions as a decision-support aid
+        rather than a prescriptive protocol.
+      </p>
+
+      <h2>3. Development Methodology</h2>
+      <h3>3.1 Evidence sources</h3>
+      <p>The logic and thresholds used in the tool were derived from:</p>
+      <ul>
+        <li>UK and international guidance on catheter use, CAUTI prevention, and lower urinary tract assessment,<sup>6–9</sup></li>
+        <li>urological and geriatric medicine reviews relevant to urinary retention and frailty,<sup>3–5,10</sup></li>
+        <li>observational literature on bladder volume thresholds and post-void residual interpretation,<sup>11–13</sup></li>
+        <li>pragmatic standards commonly embedded in NHS nursing standard operating procedures.</li>
+      </ul>
+      <p>
+        No single guideline provides a fully specified algorithm for peri-operative catheter management in femoral and pelvic fracture patients.
+        The tool therefore synthesises convergent practice standards rather than extrapolating from a single source.
+      </p>
+
+      <h3>3.2 Design philosophy</h3>
+      <p><strong>Bladder volume over subjective symptoms</strong><br>
+        Objective bladder volume is prioritised because symptoms are frequently unreliable in frail, delirious, or cognitively impaired patients.
+      </p>
+      <p><strong>Screening for pain and delirium as context, not as a barrier</strong><br>
+        Pain and delirium may be caused by urinary retention, contribute to retention, or coexist with it. The screening step therefore modifies context but does not block bladder assessment.
+      </p>
+      <p><strong>Conservative thresholds</strong><br>
+        Thresholds are chosen to minimise harm from bladder over-distension while avoiding unnecessary catheterisation.
+      </p>
+      <p><strong>Explicit STOP and escalation rules</strong><br>
+        Situations where catheterisation should not proceed without senior input are clearly identified.
+      </p>
+      <p><strong>Auditability</strong><br>
+        Each output is accompanied by explicit rationale suitable for contemporaneous documentation.
+      </p>
+
+      <h2>4. Evidence Underpinning the Screening Step</h2>
+      <p>
+        Delirium and pain are common in peri-operative hip-fracture care and may worsen agitation, mobility, continence, and communication.<sup>4,5</sup>
+        Urinary retention may contribute to agitation or delirium, but it is not a specific explanation and should be considered alongside other reversible causes.
+      </p>
+      <p>
+        The tool therefore screens for pain and delirium first in order to provide context and prompt early treatment of reversible contributors. However, this step does <strong>not</strong> prevent bladder assessment when retention risk exists.
+      </p>
+
+      <h2>5. Evidence Underpinning Catheterisation Decisions</h2>
+
+      <h3>5.1 Why bladder volume is central</h3>
+      <p>
+        Symptoms of urinary retention are poorly sensitive in older adults. Clinically significant retention may be present without classic discomfort,
+        particularly in patients with delirium, immobility, neurological impairment, or impaired communication.<sup>4,11</sup>
+      </p>
+      <p>
+        Bladder scanning provides a non-invasive and reproducible measure and is therefore widely recommended to guide decision-making.<sup>6,9</sup>
+      </p>
+      <p>
+        In the current tool, once a bladder scan or post-void residual (PVR) is available, that volume is prioritised over timing since last void.
+        Time since last void is used primarily to decide whether a scan is needed, not to override a known high volume.
+      </p>
+
+      <h3>5.2 Symptomatic retention (≥300 mL)</h3>
+      <p>
+        A post-void residual or bladder volume of ≥300 mL is commonly cited as indicating inadequate bladder emptying and clinically relevant retention.<sup>11,12</sup>
+      </p>
+      <p>
+        The tool therefore recommends catheterisation when <strong>signs suggesting retention are present and bladder volume is ≥300 mL</strong>.
+        Volumes below this threshold are interpreted more cautiously and prompt reassessment rather than immediate catheterisation.
+      </p>
+
+      <h3>5.3 Sex-specific asymptomatic bladder volumes</h3>
+      <p>
+        In asymptomatic patients, higher thresholds are appropriate in order to avoid unnecessary catheterisation. Observational literature associates
+        bladder volumes above approximately 500 mL with increasing risk of over-distension and renal sequelae, but does not provide a single universally
+        accepted operational threshold for frail trauma patients.<sup>3,13</sup>
+      </p>
+      <p>
+        The current tool therefore applies the following <strong>pragmatic sex-specific asymptomatic thresholds</strong>:
+      </p>
+
+      <h3>Operational bladder volume thresholds used in the tool</h3>
+
+<table style="width:100%; border-collapse:collapse; margin:14px 0; font-size:0.95rem;">
+<thead>
+<tr style="background:#f3f4f6;">
+<th style="text-align:left; padding:8px; border:1px solid #e5e7eb;">Clinical context</th>
+<th style="text-align:left; padding:8px; border:1px solid #e5e7eb;">Bladder volume threshold</th>
+<th style="text-align:left; padding:8px; border:1px solid #e5e7eb;">Recommended action</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td style="padding:8px; border:1px solid #e5e7eb;">
+Signs suggesting urinary retention
+</td>
+<td style="padding:8px; border:1px solid #e5e7eb;">
+≥300 mL
+</td>
+<td style="padding:8px; border:1px solid #e5e7eb;">
+Catheterisation recommended
+</td>
+</tr>
+
+<tr>
+<td style="padding:8px; border:1px solid #e5e7eb;">
+Asymptomatic – male
+</td>
+<td style="padding:8px; border:1px solid #e5e7eb;">
+≥500 mL
+</td>
+<td style="padding:8px; border:1px solid #e5e7eb;">
+Catheterisation recommended
+</td>
+</tr>
+
+<tr>
+<td style="padding:8px; border:1px solid #e5e7eb;">
+Asymptomatic – female
+</td>
+<td style="padding:8px; border:1px solid #e5e7eb;">
+≥600 mL
+</td>
+<td style="padding:8px; border:1px solid #e5e7eb;">
+Catheterisation recommended
+</td>
+</tr>
+
+</tbody>
+</table>
+
+      <p>
+        Intermediate volumes are handled conservatively:
+      </p>
+      <ul>
+        <li><strong>Male/unknown sex:</strong> 300–499 mL → observe and repeat scan.</li>
+        <li><strong>Female:</strong> 400–599 mL → observe and repeat scan.</li>
+      </ul>
+
+      <p>
+        These sex-specific thresholds are <strong>pragmatic rather than directly trial-derived</strong>. They were chosen to reduce unnecessary catheterisation
+        while still limiting the risk of over-distension in a frail, often poorly communicative population.
+      </p>
+
+      <h3>5.4 Overriding clinical indications</h3>
+      <p>
+        Certain clinical states justify deviation from standard volume thresholds, including acute kidney injury, hydronephrosis, or rapidly rising bladder volumes.
+        These reflect organ-level risk where delay may result in harm.<sup>3,8</sup>
+      </p>
+      <p>
+        The tool therefore allows threshold override only with senior clinical review in these circumstances.
+      </p>
+
+      <h2>6. Evidence Underpinning TWOC Eligibility</h2>
+      <p>
+        Successful TWOC depends not only on bladder physiology but also on contextual safety factors, including haemodynamic stability, pain control,
+        availability of bladder scanning, and adequate staffing and mobility support.
+      </p>
+      <p>
+        Guidance emphasises that TWOC should be attempted only when monitoring and re-intervention are feasible.<sup>6,9</sup>
+        The eligibility checklist reflects these principles and is designed to prevent unsafe or poorly supported TWOC attempts.
+      </p>
+
+      <h2>7. Evidence Underpinning TWOC Outcome Interpretation</h2>
+      <h3>7.1 Primary role of post-void bladder volume</h3>
+      <p>
+        Post-void residual volume is the most reliable indicator of TWOC success or failure.<sup>11–13</sup>
+        The tool treats <strong>PVR &lt;200 mL</strong> as compatible with successful voiding and <strong>PVR ≥300 mL</strong> as indicating failed TWOC.
+        Intermediate values imply uncertainty and warrant observation rather than automatic re-catheterisation.
+      </p>
+
+      <h3>7.2 Role of symptoms</h3>
+      <p>
+        Symptoms such as discomfort or distress increase concern but do not replace objective residual volume. In frail patients, symptoms may be absent despite
+        significant retention or present despite smaller residuals.<sup>4,11</sup>
+      </p>
+      <p>
+        The tool therefore uses symptoms to increase urgency and to identify “symptomatic residual”, but not to override a clearly low or clearly high bladder volume.
+      </p>
+
+      <h2>8. Safety, Risk, and Escalation</h2>
+      <p>
+        The tool embeds safety features including prohibition of catheterisation without senior input in suspected urethral injury or macroscopic haematuria,
+        STOP rules for pain, resistance, distress, or patient instability during catheterisation, and escalation where complications arise.<sup>8,9</sup>
+      </p>
+      <p>
+        These rules are intended to reduce iatrogenic harm and should be treated as procedural safety principles rather than discretionary prompts.
+      </p>
+
+      <h2>9. Limitations and Uncertainty</h2>
+      <p>
+        The evidence base for catheter management in femoral and pelvic fracture patients is limited. Most thresholds derive from mixed medical and surgical
+        populations rather than trauma-specific prospective trials. Accordingly, several thresholds used in the tool are pragmatic rather than definitive,
+        and clinical judgement remains essential.
+      </p>
+      <p>
+        The tool synthesises guideline recommendations, observational evidence, and pragmatic clinical reasoning. In several areas the literature does not
+        provide precise operational thresholds for peri-operative urinary retention in orthogeriatric trauma patients. Where this occurs, the algorithm applies
+        conservative, pragmatic thresholds designed to minimise patient harm while avoiding unnecessary catheterisation.
+      </p>
+      <p>
+        The confidence assessments below therefore distinguish between <strong>direct evidence</strong>, <strong>clinical extrapolation</strong>, and
+        <strong>interpretative judgement</strong>, allowing readers to understand how each component of the tool was derived.
+      </p>
+
+      <h2>10. Confidence Summary</h2>
+
+      <div class="matrix">
+        <div class="head">Domain</div>
+        <div class="head">Evidence</div>
+        <div class="head">Extrapolation</div>
+        <div class="head">Interpretation</div>
+
+        <div><strong>Screening for pain/delirium</strong></div>
+        <div>High</div>
+        <div>Moderate</div>
+        <div>Moderate–High</div>
+
+        <div><strong>Bladder scan priority</strong></div>
+        <div>High</div>
+        <div>High</div>
+        <div>Moderate–High</div>
+
+        <div><strong>Signs + ≥300 mL threshold</strong></div>
+        <div>Moderate</div>
+        <div>Moderate</div>
+        <div>Moderate</div>
+
+        <div><strong>Sex-specific asymptomatic thresholds</strong></div>
+        <div>Moderate</div>
+        <div>Low–Moderate</div>
+        <div>Moderate</div>
+
+        <div><strong>TWOC thresholds</strong></div>
+        <div>Moderate</div>
+        <div>Moderate</div>
+        <div>Moderate</div>
+
+        <div><strong>STOP / escalation rules</strong></div>
+        <div>High</div>
+        <div>High</div>
+        <div>High</div>
+      </div>
+
+      <h2>11. Evidence Appraisal and Confidence Assessment</h2>
+
+      <details>
+        <summary>Rapid screening for pain and delirium (expand for detail)</summary>
+        <p><strong>Evidence</strong><br>
+        Delirium and pain are common in hip-fracture care and are associated with poorer outcomes. Guidance supports systematic assessment of delirium and reversible causes including pain and urinary problems.<sup>4,5</sup></p>
+        <p><strong>Extrapolation</strong><br>
+        Although urinary retention is not a specific cause of delirium, it may contribute to agitation, distress, or worsening confusion in frail patients.</p>
+        <p><strong>Interpretation</strong><br>
+        The tool screens for pain and delirium to provide context but does not block bladder assessment if retention risk is present.</p>
+        <div class="confidence">
+          <span class="c-high">Evidence: High</span>
+          <span class="c-mod">Extrapolation: Moderate</span>
+          <span class="c-mod">Interpretation: Moderate–High</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>Bladder scan prioritisation</summary>
+        <p><strong>Evidence</strong><br>
+        Ultrasound bladder scanning is an established method for estimating bladder volume and post-void residual urine.<sup>6,9</sup></p>
+        <p><strong>Extrapolation</strong><br>
+        In frail trauma patients, objective measurement is more reliable than symptom reporting alone.</p>
+        <p><strong>Interpretation</strong><br>
+        Once a bladder scan volume is available, it should be interpreted directly rather than subordinated to elapsed time since last void.</p>
+        <div class="confidence">
+          <span class="c-high">Evidence: High</span>
+          <span class="c-high">Extrapolation: High</span>
+          <span class="c-mod">Interpretation: Moderate–High</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>Catheterisation threshold when signs suggest retention (≥300 mL)</summary>
+        <p><strong>Evidence</strong><br>
+        Several reviews and observational sources treat residual volumes around 300 mL as compatible with clinically significant incomplete bladder emptying.<sup>11,12</sup></p>
+        <p><strong>Extrapolation</strong><br>
+        In frail trauma patients, observable signs plus a volume ≥300 mL are taken as sufficient to support intervention.</p>
+        <p><strong>Interpretation</strong><br>
+        The tool therefore recommends catheterisation when signs suggesting retention are present and bladder volume is ≥300 mL.</p>
+        <div class="confidence">
+          <span class="c-mod">Evidence: Moderate</span>
+          <span class="c-mod">Extrapolation: Moderate</span>
+          <span class="c-mod">Interpretation: Moderate</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>Sex-specific asymptomatic bladder volume thresholds</summary>
+        <p><strong>Evidence</strong><br>
+        Literature suggests increasing risk of over-distension above approximately 500 mL, but does not define a universally accepted trauma-specific threshold.<sup>3,13</sup></p>
+        <p><strong>Extrapolation</strong><br>
+        Sex-specific thresholds are used pragmatically because symptoms are unreliable, bladder capacity varies, and unnecessary catheterisation should be avoided.</p>
+        <p><strong>Interpretation</strong><br>
+        The tool applies <strong>male asymptomatic ≥500 mL</strong> and <strong>female asymptomatic ≥600 mL</strong>, with observation zones below these levels.</p>
+        <div class="confidence">
+          <span class="c-mod">Evidence: Moderate</span>
+          <span class="c-lowmod">Extrapolation: Low–Moderate</span>
+          <span class="c-mod">Interpretation: Moderate</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>TWOC eligibility and outcome thresholds</summary>
+        <p><strong>Evidence</strong><br>
+        Residual volume is the most reliable marker of TWOC success or failure, with &lt;200 mL and ≥300 mL commonly used pragmatic anchors.<sup>11–13</sup></p>
+        <p><strong>Extrapolation</strong><br>
+        These thresholds are applied to orthogeriatric trauma patients despite evidence largely being derived from mixed populations.</p>
+        <p><strong>Interpretation</strong><br>
+        The tool treats PVR &lt;200 mL as successful, ≥300 mL as unsuccessful, and intermediate values as requiring observation.</p>
+        <div class="confidence">
+          <span class="c-mod">Evidence: Moderate</span>
+          <span class="c-mod">Extrapolation: Moderate</span>
+          <span class="c-mod">Interpretation: Moderate</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>STOP and escalation rules</summary>
+        <p><strong>Evidence</strong><br>
+        Pain, resistance, haematuria, and instability during catheterisation are widely recognised warning features in catheter care guidance.<sup>8,9</sup></p>
+        <p><strong>Extrapolation</strong><br>
+        Embedding these rules as hard procedural safety prompts is consistent with standard practice.</p>
+        <p><strong>Interpretation</strong><br>
+        The tool treats these as immediate escalation triggers to a senior doctor/practitioner or urology.</p>
+        <div class="confidence">
+          <span class="c-high">Evidence: High</span>
+          <span class="c-high">Extrapolation: High</span>
+          <span class="c-high">Interpretation: High</span>
+        </div>
+      </details>
+
+      <h2>12. References</h2>
+      <div class="refs">
+        <ol>
+          <li>Saint S, Meddings J, Calfee D, Kowalski C, Krein S. Catheter-associated urinary tract infection and the Medicare rule changes. <em>Ann Intern Med</em>. 2009;150(12):877–884.</li>
+          <li>Meddings J, Rogers MAM, Krein SL, Fakih MG, Olmsted RN, Saint S. Reducing unnecessary urinary catheter use and other strategies to prevent catheter-associated urinary tract infection: an integrative review. <em>BMJ Qual Saf</em>. 2014;23(4):277–289.</li>
+          <li>Baldini G, Bagry H, Aprikian A, Carli F. Postoperative urinary retention: anesthetic and perioperative considerations. <em>Anesthesiology</em>. 2009;110(5):1139–1157.</li>
+          <li>Resnick NM, Yalla SV. Management of urinary retention in the elderly. <em>J Am Geriatr Soc</em>. 1989;37:113–120.</li>
+          <li>Wagg A, Gibson W, Ostaszkiewicz J, et al. Managing urinary problems in frail older people. <em>Age Ageing</em>. 2015;44(5):720–726.</li>
+          <li>NICE. Healthcare-associated infections: prevention and control in primary and community care. CG139.</li>
+          <li>NICE. Lower urinary tract symptoms in men: management. CG97.</li>
+          <li>European Association of Urology. Guidelines on Management of Non-neurogenic Male LUTS.</li>
+          <li>Royal College of Nursing. Catheter Care: Guidance for Health Care Professionals. 2019.</li>
+          <li>Abrams P, Cardozo L, Wagg A, Wein A. Assessment and treatment of urinary retention. <em>BMJ</em>. 2013;346:f3147.</li>
+          <li>Yamanishi T, Yasuda K, Sakakibara R, et al. Postvoid residual urine volume in the elderly. <em>Neurourol Urodyn</em>. 1997;16:1–7.</li>
+          <li>Fitzpatrick JM, Kirby RS. Acute urinary retention. <em>BJU Int</em>. 2012;109(1):6–8.</li>
+          <li>Choong S, Emberton M. Acute urinary retention. <em>BJU Int</em>. 2000;85(2):186–201.</li>
+        </ol>
+      </div>
+
+    </div>
+
+    <footer>
+      © Dr Prabhath Fernando MBBS MD FRCP — Catheter Governance v1.5 (prepared for review)
+    </footer>
+  </div>
+</body>
+</html>
