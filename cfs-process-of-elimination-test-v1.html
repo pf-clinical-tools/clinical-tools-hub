@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Rockwood Clinical Frailty Scale (CFS) Interactive Assessment</title>
+
+<style>
+  :root{
+    --nhs-blue:#005eb8;
+    --nhs-dark:#003087;
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --text:#1f2937;
+    --muted:#5b6470;
+    --border:#d8dde6;
+    --soft-blue:#eef6fc;
+    --soft-green:#eef7ee;
+    --ok:#007f3b;
+    --shadow:0 2px 10px rgba(0,0,0,.03);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.55;
+  }
+
+  .wrap{
+    max-width:900px;
+    margin:0 auto;
+    padding:18px 14px 70px;
+  }
+
+  .hero{
+    background:linear-gradient(135deg,var(--nhs-blue),var(--nhs-dark));
+    color:#fff;
+    border-radius:18px;
+    padding:22px 18px 18px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+  }
+
+  .hero h1{
+    margin:0 0 8px;
+    font-size:1.5rem;
+    line-height:1.2;
+  }
+
+  .hero p{
+    margin:0;
+    max-width:760px;
+  }
+
+  .section{
+    margin-top:16px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+
+  .section-body{
+    padding:18px;
+    overflow-wrap:anywhere;
+  }
+
+  .note{
+    margin-top:12px;
+    background:#f8fbfe;
+    border-left:4px solid var(--nhs-blue);
+    border-radius:0 14px 14px 0;
+    padding:12px 14px;
+  }
+
+  .small{
+    font-size:.9rem;
+    color:var(--muted);
+  }
+
+  .muted{color:var(--muted)}
+
+  .card{
+    margin-top:16px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:16px;
+    box-shadow:var(--shadow);
+    max-width:100%;
+  }
+
+  .card h2{
+    margin:0 0 8px;
+    color:var(--nhs-dark);
+    font-size:1.12rem;
+  }
+
+  .cfs-step{
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:#fbfdff;
+    padding:14px;
+    margin-top:12px;
+  }
+
+  .cfs-step h3{
+    margin:0 0 8px;
+    color:var(--nhs-dark);
+    font-size:1rem;
+  }
+
+  .cfs-options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:12px;
+  }
+
+  .cfs-option{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid #c8d8ea;
+    border-radius:999px;
+    padding:8px 14px;
+    background:#fff;
+    cursor:pointer;
+    font-weight:700;
+    color:var(--nhs-dark);
+  }
+
+  .cfs-option input{
+    accent-color:var(--nhs-blue);
+  }
+
+  .cfs-option.cfs-selected-yes{
+    background:var(--soft-green);
+    border-color:var(--ok);
+    color:#0f5132;
+  }
+
+  .cfs-option.cfs-selected-no{
+    background:var(--soft-blue);
+    border-color:var(--nhs-blue);
+    color:var(--nhs-dark);
+  }
+
+  .actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:16px;
+  }
+
+  button{
+    border:none;
+    border-radius:10px;
+    min-height:46px;
+    padding:0 16px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+  }
+
+  .btn-secondary{
+    background:#e8edf5;
+    color:#1f2937;
+  }
+
+  .result-box{
+    border:2px solid var(--nhs-blue);
+    border-radius:16px;
+    padding:16px;
+    background:#fafdff;
+    margin-top:12px;
+    box-shadow:0 2px 10px rgba(0,94,184,.06);
+  }
+
+  .result-path{
+    color:var(--nhs-dark);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+
+  .result-dose{
+    font-size:1.35rem;
+    line-height:1.2;
+    font-weight:800;
+    color:var(--nhs-dark);
+    margin-bottom:8px;
+  }
+
+  .result-sub{
+    margin:4px 0;
+    font-size:.97rem;
+  }
+
+  .footer{
+    margin-top:26px;
+    padding:14px 10px 0;
+    text-align:center;
+    font-size:.86rem;
+    color:var(--muted);
+    border-top:1px solid var(--border);
+  }
+
+  .footer p{
+    margin:8px 0 0;
+  }
+
+  @media (max-width: 700px){
+    .wrap{padding-left:12px;padding-right:12px}
+    .hero,.section,.card{border-radius:14px}
+    .section-body{padding:14px}
+    .actions button{flex:1 1 100%}
+    .hero h1{font-size:1.32rem}
+  }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Rockwood Clinical Frailty Scale (CFS) Interactive Assessment</h1>
+    <p>
+    Frailty scoring should reflect the patient's usual baseline function before the acute illness or injury rather than the temporary deterioration present on admission.
+    </p>
+  </div>
+
+  <section id="cfs-tool" class="section">
+    <div class="section-body">
+      <p>Use this tool to support Clinical Frailty Scale scoring. It should not replace clinical judgement.</p>
+
+      <div class="note">
+        <strong>Important:</strong> Frailty scoring should reflect the patient’s actual baseline function prior to the acute illness or fracture and not the temporary deterioration seen on admission.
+      </div>
+
+      <div class="card">
+        <p class="small">
+          Start at CFS 9 and work down. Select <strong>Yes</strong> when the descriptor matches the patient’s baseline function. Select <strong>No</strong> to move to the next category.
+        </p>
+
+        <div id="cfsQuestionArea"></div>
+
+        <div class="actions">
+          <button class="btn-secondary" id="resetCfsBtn" type="button">Reset</button>
+        </div>
+
+        <div id="cfsResultArea" style="margin-top:12px;">
+          <div class="muted">Start with CFS 9.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p><strong>Rockwood Clinical Frailty Scale (CFS) Interactive Tool</strong></p>
+    <p class="small">Software implementation and interface: Dr Prabhath Fernando.</p>
+    <p class="small">
+      Clinical Frailty Scale methodology and descriptors derived from:
+      Rockwood K, Song X, MacKnight C, Bergman H, Hogan DB, McDowell I, Mitnitski A.
+      <em>A global clinical measure of fitness and frailty in elderly people.</em>
+      CMAJ. 2005;173(5):489–495.
+    </p>
+  </footer>
+
+</div>
+
+<script>
+const cfsItems = [
+  {
+    score: 9,
+    label: "Terminally Ill",
+    descriptor: "Approaching the end of life. Life expectancy less than 6 months, but not otherwise evidently frail."
+  },
+  {
+    score: 8,
+    label: "Very Severely Frail",
+    descriptor: "Completely dependent and approaching the end of life. Typically, they could not recover even from a minor illness."
+  },
+  {
+    score: 7,
+    label: "Severely Frail",
+    descriptor: "Completely dependent for personal care, from whatever cause, physical or cognitive. Even so, they seem stable and not at high risk of dying within approximately 6 months."
+  },
+  {
+    score: 6,
+    label: "Moderately Frail",
+    descriptor: "People need help with all outside activities and with keeping house. Inside, they often have problems with stairs and need help with bathing and might require minimal assistance with dressing."
+  },
+  {
+    score: 5,
+    label: "Mildly Frail",
+    descriptor: "These people often have more evident slowing and need help with high-order instrumental activities of daily living such as finances, transportation, heavy housework, medications or shopping."
+  },
+  {
+    score: 4,
+    label: "Vulnerable",
+    descriptor: "While not dependent on others for daily help, symptoms commonly limit activities. A common complaint is being slowed up and/or being tired during the day."
+  },
+  {
+    score: 3,
+    label: "Managing Well",
+    descriptor: "People whose medical problems are well controlled but are not regularly active beyond routine walking and daily activities."
+  },
+  {
+    score: 2,
+    label: "Well",
+    descriptor: "People who have no active disease symptoms but are less fit than category 1. Often exercise or are very active occasionally rather than regularly."
+  },
+  {
+    score: 1,
+    label: "Very Fit",
+    descriptor: "People who are robust, active, energetic and motivated. These people commonly exercise regularly and are among the fittest for their age."
+  }
+];
+
+const cfsQuestionArea = document.getElementById("cfsQuestionArea");
+const cfsResultArea = document.getElementById("cfsResultArea");
+const resetCfsBtn = document.getElementById("resetCfsBtn");
+
+let cfsActiveIndex = 0;
+let cfsFinalItem = null;
+let cfsAnswers = {};
+
+function updateSelectedOptionStyles(radios){
+  radios.forEach(r => {
+    const label = r.closest(".cfs-option");
+    if (!label) return;
+    label.classList.toggle("cfs-selected-yes", r.value === "yes" && r.checked);
+    label.classList.toggle("cfs-selected-no", r.value === "no" && r.checked);
+  });
+}
+
+function renderCfsTool(){
+  if (!cfsQuestionArea || !cfsResultArea || !resetCfsBtn) return;
+
+  cfsQuestionArea.innerHTML = "";
+
+  cfsItems.forEach((item, index) => {
+    if (item.score === 1) return;
+    if (cfsFinalItem) return;
+    if (index !== cfsActiveIndex) return;
+
+    const selectedAnswer = cfsAnswers[item.score] || "";
+
+    const step = document.createElement("div");
+    step.className = "cfs-step";
+
+    step.innerHTML = `
+      <h3>CFS ${item.score}: ${item.label}</h3>
+      <p>${item.descriptor}</p>
+
+      <div class="cfs-options">
+        <label class="cfs-option ${selectedAnswer === "yes" ? "cfs-selected-yes" : ""}">
+          <input type="radio" name="cfs-${item.score}" value="yes" ${selectedAnswer === "yes" ? "checked" : ""}>
+          Yes
+        </label>
+
+        <label class="cfs-option ${selectedAnswer === "no" ? "cfs-selected-no" : ""}">
+          <input type="radio" name="cfs-${item.score}" value="no" ${selectedAnswer === "no" ? "checked" : ""}>
+          No
+        </label>
+      </div>
+    `;
+
+    cfsQuestionArea.appendChild(step);
+
+    const radios = step.querySelectorAll(`input[name="cfs-${item.score}"]`);
+
+    radios.forEach(radio => {
+      radio.addEventListener("change", function(){
+        cfsAnswers[item.score] = this.value;
+        updateSelectedOptionStyles(radios);
+
+        if (this.value === "yes") {
+          cfsFinalItem = item;
+          showCfsResult(item);
+          return;
+        }
+
+        if (this.value === "no") {
+          cfsFinalItem = null;
+          cfsResultArea.innerHTML = "";
+
+          if (item.score === 2) {
+            setTimeout(() => {
+              const cfsOne = cfsItems.find(cfs => cfs.score === 1);
+              cfsFinalItem = cfsOne;
+              showCfsResult(cfsOne);
+              renderCfsTool();
+            }, 250);
+            return;
+          }
+
+          setTimeout(() => {
+            cfsActiveIndex = index + 1;
+            cfsResultArea.innerHTML = `<div class="muted">CFS ${item.score} not selected. Continue to CFS ${cfsItems[index + 1].score}.</div>`;
+            renderCfsTool();
+          }, 250);
+        }
+      });
+    });
+  });
+}
+
+function showCfsResult(item){
+  cfsResultArea.innerHTML = `
+    <div class="result-box">
+      <div class="result-path">Clinical Frailty Scale result</div>
+      <div class="result-dose">CFS ${item.score}: ${item.label}</div>
+      <div class="result-sub">${item.descriptor}</div>
+    </div>
+  `;
+}
+
+function resetCfsTool(){
+  cfsActiveIndex = 0;
+  cfsFinalItem = null;
+  cfsAnswers = {};
+  cfsResultArea.innerHTML = `<div class="muted">Start with CFS 9.</div>`;
+  renderCfsTool();
+}
+
+resetCfsBtn.addEventListener("click", resetCfsTool);
+renderCfsTool();
+</script>
+
+</body>
+</html>
