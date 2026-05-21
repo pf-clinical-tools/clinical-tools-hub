@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>NVAF Anticoagulation Risk Assessment Tool – Governance Rationale, Evidence Base, and Intended Use (v1.5G OUTPUT HIERARCHY REWORK)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+<!-- GOVERNANCE_MARKER_NVAF_V1_5G_OUTPUT_HIERARCHY_REWORK -->
+<!-- CHANGELOG (v1.5G OUTPUT HIERARCHY REWORK):
+  - Updated governance document version to align with tool build v1.5G OUTPUT HIERARCHY REWORK.
+  - No change to core clinical model, score structure, frailty logic, or evidence base from the preceding calibrated build.
+  - Updated visible output description to reflect revised hierarchy:
+      Overall interpretation / Clinical balance / Annual risk comparison / Threshold position / Frailty context / Scientific detail.
+  - Clarified that the current build introduces usability and output-hierarchy refinements only, without changing underlying annual risk calculations.
+-->
+
+<style>
+  :root{
+    --bg:#f6f7f9;
+    --card:#ffffff;
+    --text:#111827;
+    --muted:#4b5563;
+    --border:#e5e7eb;
+    --accent:#2563eb;
+    --soft:#eff6ff;
+    --shadow:0 10px 28px rgba(0,0,0,0.08);
+
+    --amber:#d97706;
+    --amberSoft:#fff7ed;
+
+    --green:#15803d;
+    --greenSoft:#ecfdf3;
+
+    --purple:#6b21a8;
+    --purpleSoft:#f5f3ff;
+
+    --slate:#475569;
+    --slateSoft:#f1f5f9;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    line-height:1.6;
+  }
+  .wrap{
+    max-width:920px;
+    margin:22px auto;
+    padding:0 14px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    box-shadow:var(--shadow);
+    padding:22px 22px 18px;
+  }
+  h1{
+    margin:0 0 8px;
+    font-size:1.9rem;
+    letter-spacing:-0.2px;
+  }
+  .subtitle{
+    margin:0 0 18px;
+    color:var(--muted);
+    font-size:0.98rem;
+  }
+  .meta{
+    background:var(--soft);
+    border-left:4px solid var(--accent);
+    padding:12px 14px;
+    border-radius:10px;
+    margin:14px 0 18px;
+    color:var(--text);
+    font-size:0.98rem;
+  }
+  .meta strong{ font-weight:700; }
+  h2{
+    margin:26px 0 10px;
+    font-size:1.25rem;
+    border-bottom:1px solid var(--border);
+    padding-bottom:6px;
+  }
+  h3{
+    margin:18px 0 6px;
+    font-size:1.05rem;
+  }
+  p{ margin:10px 0; }
+  ul, ol{ margin:8px 0 8px 20px; }
+  li{ margin:4px 0; }
+
+  .callout{
+    background:#fff7ed;
+    border-left:4px solid var(--amber);
+    padding:12px 14px;
+    border-radius:10px;
+    margin:14px 0;
+    color:#111827;
+    font-size:0.96rem;
+  }
+  .callout strong{ font-weight:700; }
+
+  .callout.green{
+    background:var(--greenSoft);
+    border-left-color:var(--green);
+  }
+  .callout.purple{
+    background:var(--purpleSoft);
+    border-left-color:var(--purple);
+  }
+  .callout.slate{
+    background:var(--slateSoft);
+    border-left-color:var(--slate);
+  }
+
+  .small{
+    color:var(--muted);
+    font-size:0.92rem;
+  }
+
+  hr{
+    border:0;
+    border-top:1px dashed var(--border);
+    margin:18px 0;
+  }
+  .refs{
+    padding-left:20px;
+  }
+  .refs li{ margin:8px 0; }
+  footer{
+    margin-top:16px;
+    padding-top:12px;
+    border-top:1px dashed var(--border);
+    color:var(--muted);
+    font-size:0.86rem;
+  }
+  sup{ font-size:0.75em; vertical-align:super; }
+  code{
+    background:#f3f4f6;
+    padding:1px 6px;
+    border-radius:6px;
+    border:1px solid #e5e7eb;
+    font-size:0.92em;
+  }
+</style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+
+      <h1>NVAF Anticoagulation Risk Assessment Tool</h1>
+      <p class="subtitle">Governance Rationale, Evidence Base, and Intended Use</p>
+
+      <div class="meta">
+        <div><strong>Author:</strong> Dr Prabhath Fernando MBBS MD FRCP</div>
+        <div><strong>Associated digital tool:</strong> <strong>NVAF Anticoagulation Risk Assessment Tool (v1.5G OUTPUT HIERARCHY REWORK)</strong></div>
+        <div><strong>Intended setting:</strong> NHS secondary care and community practice</div>
+        <div><strong>Intended users:</strong> Clinicians involved in the management of atrial fibrillation</div>
+        <div><strong>Version governance marker:</strong> <code>GOVERNANCE_MARKER_NVAF_V1_5G_OUTPUT_HIERARCHY_REWORK</code></div>
+      </div>
+
+      <h2>1. Purpose and Scope</h2>
+
+      <p>
+        This document describes the clinical rationale, evidence base, governance considerations, and intended use of the
+        NVAF Anticoagulation Risk Assessment Tool (v1.5G OUTPUT HIERARCHY REWORK).
+      </p>
+
+      <p>
+        The tool is designed to support clinicians in balancing stroke prevention and bleeding risk when considering oral
+        anticoagulation (OAC) in patients with non-valvular atrial fibrillation (NVAF), particularly in older adults and those
+        with frailty, multimorbidity, or competing risks.<sup>1–3</sup>
+      </p>
+
+      <p><strong>The current output-hierarchy build:</strong></p>
+      <ul>
+        <li>Uses validated, guideline-endorsed risk scores (CHA<sub>2</sub>DS<sub>2</sub>-VASc and ORBIT) without modification.<sup>4–6</sup></li>
+        <li>Presents a revised visible hierarchy of <strong>overall interpretation</strong>, <strong>clinical balance</strong>, <strong>annual risk comparison</strong>, <strong>threshold position</strong>, and <strong>frailty context</strong>.</li>
+        <li>Provides drug-specific modelled annual risk translation for warfarin and selected DOAC regimens.<sup>8–11</sup></li>
+        <li>Includes treated intracranial haemorrhage estimates for the selected anticoagulant within the scientific detail layer.<sup>8–11</sup></li>
+        <li>Retains frailty as a <strong>qualitative interpretation modifier only</strong>; frailty does not numerically alter the risk scores or modelled annual estimates.</li>
+        <li>Presents a calmer first-read output structure for discussion support, with expanded clinician-facing numerical detail available separately.</li>
+        <li>Includes annualised <strong>NNT</strong> and <strong>NNH</strong> estimates in the scientific detail layer, derived from annual absolute risk differences.</li>
+        <li>Separates <strong>published ORBIT observed anticoagulated bleeding context</strong> from <strong>calibrated treated-bleeding warfarin anchors</strong> used for risk translation.</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Important:</strong> This tool does not replace clinical judgement, specialist advice, shared decision-making, or local/national guidance.
+        It is designed to make clinical reasoning transparent and auditable, not to mandate a treatment decision.
+      </div>
+
+      <h2>2. Clinical Background</h2>
+
+      <p>
+        Atrial fibrillation (AF) is a major risk factor for ischaemic stroke, with AF-related strokes associated with higher mortality
+        and greater long-term disability than non-AF strokes. Oral anticoagulation substantially reduces stroke risk in NVAF but carries
+        an inherent risk of bleeding, including major bleeding and intracranial haemorrhage.<sup>1–3,8–12</sup>
+      </p>
+
+      <p><strong>Clinical decision-making in AF therefore requires balancing:</strong></p>
+      <ul>
+        <li>Absolute stroke risk without anticoagulation, and</li>
+        <li>Absolute bleeding risk with anticoagulation.</li>
+      </ul>
+
+      <p>
+        The current build also displays an estimated annual major bleeding risk <strong>without anticoagulation</strong>.
+        This estimate is included to support balanced clinical discussion and to avoid the misleading impression that patients not receiving
+        anticoagulation have no bleeding risk. However, that untreated bleeding estimate is a modelled anchor derived from observational
+        non-anticoagulated AF cohorts and should not be interpreted as an individual prediction.<sup>7</sup>
+      </p>
+
+      <p>
+        The current build additionally displays a treated annual estimate for intracranial haemorrhage with the selected anticoagulant.
+        This value is intended to reflect a clinically important harm signal that many clinicians consider separately from overall major bleeding.
+        However, intracranial haemorrhage <strong>without anticoagulation</strong> is not yet separately modelled in this build, and therefore the tool does not yet calculate an ICH-specific absolute difference or ICH-specific NNH.
+      </p>
+
+      <p><strong>This balance is particularly challenging in:</strong></p>
+      <ul>
+        <li>Older adults</li>
+        <li>Patients with frailty</li>
+        <li>Those with renal impairment, anaemia, or prior bleeding</li>
+        <li>Patients with competing risks, limited physiological reserve, or limited life expectancy</li>
+      </ul>
+
+      <p>
+        Guidelines consistently recommend assessing both stroke and bleeding risk, but also emphasise that bleeding risk scores
+        should be used to identify modifiable risk factors, not as sole determinants to withhold anticoagulation.<sup>2,3,12</sup>
+      </p>
+
+      <p>
+        The NVAF Anticoagulation Risk Assessment Tool was developed to make this reasoning explicit, structured, and auditable,
+        rather than implicit or inconsistent.
+      </p>
+
+      <h3>Representation of older and frail patients in clinical trials</h3>
+
+      <p>
+        Although oral anticoagulation is supported by robust evidence demonstrating stroke risk reduction in NVAF, it is important to recognise
+        that older adults and patients with frailty have been under-represented in many landmark anticoagulation trials.<sup>8–11</sup>
+      </p>
+
+      <p>
+        Pivotal randomised controlled trials of warfarin and direct oral anticoagulants (DOACs) predominantly enrolled relatively fit older adults,
+        with limited inclusion of patients with advanced frailty, multimorbidity, cognitive impairment, high falls risk, or limited life expectancy.
+        As a result, trial populations may not fully reflect the complexity of patients encountered in routine clinical practice, particularly within
+        secondary care and geriatric medicine settings.
+      </p>
+
+      <p>
+        Consequently, estimates of absolute stroke reduction and bleeding risk derived from these trials represent population averages, and their direct
+        applicability to frail individuals requires careful clinical interpretation. In frailty, the consequences of both stroke and major bleeding may be
+        amplified, while competing risks and patient priorities may differ substantially from those represented in trial cohorts.
+      </p>
+
+      <p>
+        This recognised evidence gap underlines the importance of individualised decision-making, shared discussion with patients and carers, and cautious
+        application of guideline recommendations in older and frail populations. The NVAF tool is designed to support this nuanced judgement rather than to
+        extrapolate trial findings uncritically to all patients.
+      </p>
+
+      <h2>3. Stroke Risk Assessment: CHA₂DS₂-VASc</h2>
+
+      <p>
+        The tool uses the CHA<sub>2</sub>DS<sub>2</sub>-VASc score to estimate typical annual stroke risk in patients with NVAF who are not anticoagulated.<sup>4,5</sup>
+      </p>
+
+      <p><strong>CHA<sub>2</sub>DS<sub>2</sub>-VASc is:</strong></p>
+      <ul>
+        <li>Widely validated across diverse populations<sup>4,5</sup></li>
+        <li>Recommended by major international guidelines<sup>2,3</sup></li>
+        <li>Simple to apply in routine clinical practice</li>
+      </ul>
+
+      <p>
+        Stroke risk estimates presented in the tool are anchored to the <strong>single monotonic CHA₂DS₂-VASc annual stroke-risk table used in the current build</strong>:
+        0.66, 1.45, 2.92, 4.28, 6.46, 9.97, 12.52, 13.96, 14.10, and 15.89 per 100 patient-years for scores 0 to 9 respectively.
+        These values are used here as discussion-support anchors rather than as precise individual predictions.
+      </p>
+
+      <p><strong>In keeping with guideline recommendations:</strong></p>
+      <ul>
+        <li>CHA<sub>2</sub>DS<sub>2</sub>-VASc is used without modification.</li>
+        <li>Sex-specific treatment thresholds are respected.<sup>2,3</sup></li>
+        <li>Baseline untreated stroke risk, derived from the monotonic annual risk table used in this build, is the stroke anchor for subsequent treated-risk modelling.</li>
+      </ul>
+
+      <h2>4. Bleeding Assessment: ORBIT and the Untreated Bleeding Anchor</h2>
+
+      <h3>4.1 Rationale for selecting ORBIT</h3>
+
+      <p>
+        Several bleeding risk scores exist, including HAS-BLED, ATRIA, and ORBIT. The present tool uses ORBIT for the following reasons:
+      </p>
+
+      <p><strong>Predictive performance</strong><br>
+        ORBIT has been shown to perform at least as well as, and in some studies better than, HAS-BLED for predicting major bleeding in anticoagulated AF patients.<sup>6</sup>
+      </p>
+
+      <p><strong>Objective variables</strong><br>
+        ORBIT relies predominantly on objective clinical variables (age, renal function, haemoglobin/anaemia, prior bleeding, antiplatelet therapy), reducing subjectivity and inter-observer variability.<sup>6</sup>
+      </p>
+
+      <p><strong>Simplicity and clinical usability</strong><br>
+        ORBIT avoids labile INR and alcohol-use variables, making it particularly suitable in the era of DOACs and in settings where warfarin-specific metrics are less relevant.<sup>6,12</sup>
+      </p>
+
+      <p><strong>Alignment with contemporary practice</strong><br>
+        ORBIT was developed and validated in cohorts including patients treated with both warfarin and direct oral anticoagulants, making it applicable to modern anticoagulation strategies.<sup>6</sup>
+      </p>
+
+      <p>
+        For these reasons, ORBIT was selected as the bleeding-vulnerability framework in this tool while recognising that no bleeding score perfectly predicts individual outcomes.
+      </p>
+
+      <h3>4.2 Important clarification: ORBIT is not used to derive untreated baseline bleeding risk directly</h3>
+
+      <p>
+        ORBIT predicts major bleeding risk in anticoagulated AF populations. It therefore cannot be used directly as a validated predictor of baseline major bleeding risk in untreated NVAF.<sup>6</sup>
+      </p>
+
+      <p>
+        In the current build, ORBIT is used for three purposes:
+      </p>
+      <ul>
+        <li>To display anticoagulated bleeding-vulnerability context</li>
+        <li>To support bleeding-risk mitigation and clinical discussion</li>
+        <li>To stratify the observational untreated bleeding anchor into low, medium, and high vulnerability categories</li>
+      </ul>
+
+      <h3>4.3 Untreated major bleeding anchor used in the current build</h3>
+
+      <p>
+        To support balanced side-by-side display of risk without anticoagulation and with selected anticoagulant, the current build uses an observational untreated major bleeding anchor,
+        stratified by ORBIT category.<sup>7</sup>
+      </p>
+
+      <ul>
+        <li><strong>ORBIT 0–2:</strong> 0.4 per 100 patient-years</li>
+        <li><strong>ORBIT 3:</strong> 0.8 per 100 patient-years</li>
+        <li><strong>ORBIT ≥4:</strong> 1.5 per 100 patient-years</li>
+      </ul>
+
+      <p>
+        These values are intended as evidence-bounded, discussion-support anchors rather than direct patient-specific predictions. They were chosen to sit within the range reported in observational studies
+        of AF patients not receiving anticoagulation.<sup>7</sup>
+      </p>
+
+      <div class="callout green">
+        <strong>Governance note:</strong><br>
+        Baseline major bleeding <strong>without anticoagulation</strong> in the current build is <strong>not</strong> derived by scaling down ORBIT anticoagulated bleeding percentages.
+        It is anchored to observational non-anticoagulated AF cohorts and stratified by ORBIT category to reflect bleeding vulnerability.<sup>6,7</sup>
+      </div>
+
+      <h2>5. Drug-specific Annual Risk Translation Model</h2>
+
+      <p>
+        The principal feature of the current build remains a drug-specific annual risk translation layer.
+      </p>
+
+      <p><strong>The model structure is:</strong></p>
+      <ol>
+        <li>Estimate baseline annual stroke risk from CHA<sub>2</sub>DS<sub>2</sub>-VASc.</li>
+        <li>Estimate baseline annual major bleeding risk without anticoagulation using the observational untreated bleeding anchor stratified by ORBIT category.<sup>6,7</sup></li>
+        <li>Apply drug-specific relative effects to derive treated annual stroke and treated annual major bleeding estimates.<sup>8–11</sup></li>
+        <li>Display a treated annual intracranial haemorrhage estimate for the selected anticoagulant, based on trial-anchored evidence for that drug.<sup>8–11</sup></li>
+      </ol>
+
+      <p>
+        The current build supports:
+      </p>
+      <ul>
+        <li>Warfarin (INR 2–3)</li>
+        <li>Apixaban 5 mg twice daily</li>
+        <li>Apixaban 2.5 mg twice daily</li>
+        <li>Dabigatran 150 mg twice daily</li>
+        <li>Dabigatran 110 mg twice daily</li>
+        <li>Rivaroxaban</li>
+        <li>Edoxaban 60 mg</li>
+        <li>Edoxaban 30 mg</li>
+      </ul>
+
+      <p>
+        These treated-risk estimates are modelled annual estimates derived from the baseline anchor plus therapy-specific relative effects. They are intended to support comparison and discussion,
+        not to function as a patient-specific predictive model.<sup>8–11</sup>
+      </p>
+
+      <p>
+        The intracranial haemorrhage estimate is displayed as an annual treated-risk figure only. In the current build it is not yet linked to a separately modelled untreated ICH anchor,
+        and therefore does not yet generate an ICH-specific absolute difference or ICH-specific NNH.
+      </p>
+
+      <h3>5.1 Bleeding model calibration in the current build</h3>
+
+      <p>
+        The original ORBIT derivation study reported observed major bleeding rates of approximately <strong>2.4, 4.7 and 8.1 events per 100 patient-years</strong>
+        across low-, medium- and high-risk strata.<sup>6</sup> In the current build, these published ORBIT stratum rates are retained as
+        <strong>observed anticoagulated bleeding context</strong> for the selected ORBIT category.
+      </p>
+
+      <p>
+        However, these published ORBIT rates are <strong>not drug-specific treated bleeding estimates</strong>. When used directly as treated warfarin anchors and then combined with
+        drug-specific hazard ratios versus warfarin from pivotal anticoagulant trials, the resulting displayed annual treated bleeding estimates appeared
+        <strong>excessively pessimistic</strong> in scenario testing, particularly for DOACs with more favourable bleeding profiles.
+      </p>
+
+      <p>
+        The current build therefore separates:
+      </p>
+
+      <ul>
+        <li><strong>Published ORBIT observed anticoagulated bleeding context:</strong> low approximately 2.5%, medium 4.7%, high 8.1% per year</li>
+        <li><strong>Calibrated treated-bleeding warfarin anchors used for model translation:</strong> low 2.0%, medium 3.5%, high 5.0% per year</li>
+      </ul>
+
+      <p>
+        These calibrated treated-bleeding anchors are <strong>modelling values</strong>, not direct cohort-derived event rates. They were selected pragmatically after scenario testing in order to:
+      </p>
+
+      <ul>
+        <li>Preserve ordinal bleeding-risk stratification across ORBIT bands</li>
+        <li>Preserve drug-relative bleeding differences</li>
+        <li>Avoid excessively pessimistic treated annual bleeding outputs</li>
+        <li>Improve bedside plausibility of displayed estimates</li>
+      </ul>
+
+      <p>
+        Treated annual bleeding estimates for individual anticoagulants are then generated by applying drug-specific relative effects versus warfarin to the calibrated treated-bleeding warfarin anchor for the relevant ORBIT category.
+      </p>
+
+      <div class="callout slate">
+        <strong>Worked example: high ORBIT calibration</strong><br>
+        For the high-ORBIT category, the calibrated treated-bleeding warfarin anchor is set at <strong>5.0% / year</strong> rather than directly using the published ORBIT high-risk observed rate of approximately <strong>8.1% / year</strong> as a drug-translation anchor.
+      </div>
+
+      <ul>
+        <li><strong>Apixaban:</strong> 5.0 × 0.69 = <strong>3.5% / year</strong></li>
+        <li><strong>Dabigatran 150 mg:</strong> 5.0 × 0.93 = <strong>4.7% / year</strong></li>
+        <li><strong>Dabigatran 110 mg:</strong> 5.0 × 0.80 = <strong>4.0% / year</strong></li>
+        <li><strong>Rivaroxaban:</strong> 5.0 × 1.04 = <strong>5.2% / year</strong></li>
+      </ul>
+
+      <p>
+        These values remain high, consistent with significant bleeding vulnerability, but were judged more clinically plausible for bedside decision support than direct translation from the original ORBIT high-risk observed rate.
+      </p>
+
+      <div class="callout green">
+        <strong>Governance interpretation:</strong><br>
+        The calibrated treated-bleeding anchors in the current build are transparent modelling assumptions introduced to improve bedside plausibility.
+        They should be interpreted as calibration values for comparative discussion support, not as precise individual predictions of bleeding risk.
+      </div>
+
+      <h3>5.2 Why the model does not produce a single net-benefit score</h3>
+
+      <p>
+        The tool still does not calculate a single numerical “net benefit” score. There is currently no validated, guideline-endorsed method for combining stroke and bleeding risk scores into a single
+        predictive metric for individual patients that adequately accounts for frailty, competing mortality, treatment burden, and patient priorities.<sup>2,3,12</sup>
+      </p>
+
+      <p>
+        Instead, the tool provides:
+      </p>
+      <ul>
+        <li>A calmer first-read comparison of annual risks</li>
+        <li>A short clinical balance statement</li>
+        <li>An explicit threshold-position summary</li>
+        <li>Optional expanded scientific detail for clinicians</li>
+      </ul>
+
+      <h2>6. Design Principles and Safety Features</h2>
+
+      <p>
+        The NVAF tool was developed using explicit safety-by-design principles appropriate for clinical decision support.
+      </p>
+
+      <h3>6.1 Use of validated scores without modification</h3>
+      <p>
+        CHA<sub>2</sub>DS<sub>2</sub>-VASc and ORBIT are used unchanged, preserving their validated structure, thresholds, and interpretation.<sup>4–6</sup>
+      </p>
+
+      <h3>6.2 Calm visible output architecture</h3>
+      <p>
+        The visible interface is intentionally restrained. The main screen presents:
+      </p>
+      <ul>
+        <li><strong>Overall interpretation</strong></li>
+        <li><strong>Clinical balance</strong></li>
+        <li><strong>Annual risk comparison</strong></li>
+        <li><strong>Threshold position</strong></li>
+        <li><strong>Frailty context</strong></li>
+      </ul>
+
+      <p>
+        More detailed numerical material is placed in an expandable scientific detail section to minimise cognitive overload during clinical discussion.
+      </p>
+
+      <h3>6.3 Structured transparency in the scientific detail layer</h3>
+      <p>
+        The expanded scientific detail section provides:
+      </p>
+      <ul>
+        <li>Evidence summary</li>
+        <li>Extrapolation / modelling assumptions</li>
+        <li>Interpretation notes</li>
+        <li>Model inputs and outputs</li>
+        <li>Absolute effect estimates</li>
+        <li>Treated intracranial haemorrhage estimate for the selected anticoagulant</li>
+      </ul>
+
+      <h3>6.4 NNT and NNH</h3>
+
+      <p>
+        In the current build, the expanded scientific section includes:
+      </p>
+      <ul>
+        <li><strong>NNT over 1 year</strong> for stroke reduction</li>
+        <li><strong>NNH over 1 year</strong> for major bleeding increase</li>
+      </ul>
+
+      <p>
+        These are derived from annual absolute risk differences rather than from lifetime or multi-year projections. They are intended as discussion-support metrics and should be interpreted in the context of
+        frailty, competing risks, baseline prognosis, and patient priorities.
+      </p>
+
+      <div class="callout slate">
+        <strong>NNT / NNH in the current build are derived annualised estimates.</strong><br>
+        They are not individual predictions and do not account for competing mortality, adherence, treatment discontinuation, or changes in clinical context over time.
+      </div>
+
+      <h3>6.5 Intracranial bleeding</h3>
+
+      <p>
+        The current build displays a <strong>treated intracranial haemorrhage estimate</strong> for the selected anticoagulant within the scientific detail section.<sup>8–11</sup>
+      </p>
+
+      <p>
+        However, intracranial haemorrhage <strong>without anticoagulation</strong> is still not separately modelled in this build. For that reason:
+      </p>
+      <ul>
+        <li>No untreated ICH comparator is displayed</li>
+        <li>No ICH-specific absolute difference is calculated</li>
+        <li>No ICH-specific NNH is currently generated</li>
+      </ul>
+
+      <p>
+        This means that NNH in the present build still relates to <strong>major bleeding</strong>, not specifically to intracranial haemorrhage.
+      </p>
+
+      <h3>6.6 Decision context</h3>
+
+      <div class="callout slate">
+        <strong>Decision context does NOT mean “confidence in the tool”.</strong><br>
+        It is not a measure of tool reliability and not a rating of the evidence base. It describes what <em>primarily determines</em> the recommendation in that scenario:
+        guideline-concordant threshold logic, patient preferences, or prognosis/goals-of-care.
+      </div>
+
+      <h3>6.7 Frailty handling: qualitative modifier with explicit safeguards</h3>
+
+      <p>
+        Frailty is not a validated quantitative modifier of CHA<sub>2</sub>DS<sub>2</sub>-VASc or ORBIT. The tool therefore does not adjust numeric risk scores or modelled annual estimates based on CFS.
+        Instead, CFS is used as a contextual layer that changes the interpretation language and the decision-context framing.
+      </p>
+
+      <p><strong>Frailty tiers used operationally in the current build:</strong></p>
+      <ul>
+        <li><strong>CFS 1–4</strong>: no frailty-driven numeric change</li>
+        <li><strong>CFS 5–6</strong>: greater emphasis on vulnerability, recovery, and priorities</li>
+        <li><strong>CFS 7</strong>: preference-sensitive framing</li>
+        <li><strong>CFS 8–9</strong>: prognosis-dominant / individualised care planning framing</li>
+      </ul>
+
+      <div class="callout purple">
+        <strong>Safety safeguard in very severe frailty / terminal illness:</strong><br>
+        The tool is deliberately designed so that very severe frailty or terminal illness shifts interpretation toward prognosis, competing risks, time-to-benefit, and goals-of-care.
+        Frailty does not numerically lower stroke risk or raise bleeding risk within the model; it changes the way modelled estimates should be interpreted.
+      </div>
+
+      <h3>6.8 Internal consistency checks</h3>
+      <p>To prevent contradictory inputs:</p>
+      <ul>
+        <li>Age ≥75 years is defined once within CHA<sub>2</sub>DS<sub>2</sub>-VASc and derived automatically for ORBIT.</li>
+      </ul>
+      <p>This prevents logically inconsistent age-band selection across risk scores and reduces user error.</p>
+
+      <h3>6.9 Reset functionality</h3>
+      <p>A reset function is included to:</p>
+      <ul>
+        <li>Clear all inputs between assessments</li>
+        <li>Reduce risk of cross-patient data contamination</li>
+        <li>Support safe use in busy clinical environments</li>
+      </ul>
+
+      <h2>7. Interpretation and Clinical Use</h2>
+
+      <p>
+        The tool is intended to be used as part of a structured clinical assessment, not as a standalone decision-maker.
+      </p>
+
+      <p><strong>Clinicians should:</strong></p>
+      <ul>
+        <li>Use the outputs to inform discussion with patients and carers</li>
+        <li>Consider cognition, falls risk, comorbidity, functional reserve, and life expectancy</li>
+        <li>Address modifiable bleeding risk factors where possible</li>
+        <li>Document the reasoning behind anticoagulation decisions, particularly when the decision context is preference-sensitive or prognosis-dominant</li>
+      </ul>
+
+      <p><strong>The tool may be particularly helpful in:</strong></p>
+      <ul>
+        <li>Older adults with intermediate or threshold-zone stroke risk</li>
+        <li>Patients with prior bleeding, anaemia, CKD, or antiplatelet use</li>
+        <li>Situations where clinicians wish to compare specific anticoagulant options in a transparent way</li>
+        <li>Situations where patients or carers benefit from plain-language annualised risk translation</li>
+        <li>Situations where clinicians wish to consider major bleeding and intracranial haemorrhage as related but distinct harms</li>
+      </ul>
+
+      <h2>8. Limitations</h2>
+
+      <p>This tool has several important limitations:</p>
+      <ul>
+        <li>Risk estimates are derived from population-level data and do not predict individual outcomes.</li>
+        <li>The untreated major bleeding anchor is a modelled observational anchor, not a validated patient-specific untreated-bleeding score.<sup>7</sup></li>
+        <li>Published ORBIT anticoagulated bleeding rates are observational category-level context measures, not drug-specific treated-risk estimates.<sup>6</sup></li>
+        <li>Calibrated treated-bleeding warfarin anchors are transparent modelling values selected after scenario testing and are not direct cohort-derived event rates.</li>
+        <li>Drug-specific treated risks are modelled annual estimates and may not fully account for cross-trial differences in case mix.<sup>8–11</sup></li>
+        <li>Treated intracranial haemorrhage estimates are trial-anchored and should be interpreted cautiously across trials.<sup>8–11</sup></li>
+        <li>Untreated intracranial haemorrhage is not yet separately modelled.</li>
+        <li>Frailty is heterogeneous and not fully captured by existing risk scores.</li>
+        <li>Competing risks and non-cardiovascular mortality are not numerically modelled.</li>
+        <li>The tool does not replace specialist input in complex cases.</li>
+      </ul>
+
+      <p>
+        These limitations are inherent to current evidence and are explicitly acknowledged within the tool’s design.
+      </p>
+
+      <h2>9. Digital Clinical Safety and Governance Considerations</h2>
+
+      <p>
+        The NVAF tool is a clinical decision support tool. It does not automate a treatment decision and is not intended to function as a medical device that mandates therapy.
+      </p>
+
+      <p>It is intended to:</p>
+      <ul>
+        <li>Reduce unwarranted variation by making reasoning explicit</li>
+        <li>Promote transparent documentation and shared decision-making</li>
+        <li>Support governance review and clinician education</li>
+      </ul>
+
+      <p>
+        Version control is maintained. Substantive changes should be driven by evidence or guideline updates. Changes to modelling assumptions or output framing should be explicitly documented so that
+        the tool logic, visible interface, scientific detail, and governance text remain aligned.
+      </p>
+
+      <div class="callout green">
+        <strong>Governance principle for ongoing development:</strong><br>
+        The visible interface, modelling layer, and governance document should be updated together. Silent logic drift between tool outputs and governance wording should be avoided.
+      </div>
+
+      <h2>10. Conclusion</h2>
+
+      <p>
+        The NVAF Anticoagulation Risk Assessment Tool (v1.5G OUTPUT HIERARCHY REWORK) supports clinicians in navigating the balance between stroke prevention and bleeding risk,
+        particularly in older adults and patients with frailty where decision-making is often nuanced.
+      </p>
+
+      <p>
+        By combining validated, guideline-endorsed risk scores (CHA<sub>2</sub>DS<sub>2</sub>-VASc and ORBIT) without modification, adding a transparent drug-specific annual risk translation model,
+        retaining treated intracranial haemorrhage as a separate clinically relevant harm signal within the scientific detail layer, and explicitly documenting calibrated treated-bleeding anchors as modelling assumptions,
+        the tool promotes structured clinical reasoning while trying to avoid false precision.<sup>4–11</sup>
+      </p>
+
+      <p>
+        The current build is intended to support, not replace, clinical judgement, shared decision-making, and appropriate documentation. Used within appropriate clinical governance frameworks,
+        it may help reduce unwarranted variation, enhance transparency of decision-making, and improve the quality of clinician–patient discussions regarding anticoagulation in NVAF.
+      </p>
+
+      <h2>11. References</h2>
+
+      <p class="small">
+        Reference list updated to reflect the current modelling logic. You may still wish to refine editions and preferred citation style before final lock.
+      </p>
+
+      <ol class="refs">
+        <li>Wolf PA, Abbott RD, Kannel WB. Atrial fibrillation as an independent risk factor for stroke: the Framingham Study. <em>Stroke</em> 1991;22:983–8.</li>
+        <li>National Institute for Health and Care Excellence. Atrial fibrillation: diagnosis and management (NG196). NICE; 2021.</li>
+        <li>Hindricks G, Potpara T, Dagres N, et al. 2020 ESC Guidelines for the diagnosis and management of atrial fibrillation. <em>Eur Heart J</em> 2021;42:373–498.</li>
+        <li>Lip GYH, Nieuwlaat R, Pisters R, et al. Refining clinical risk stratification for predicting stroke and thromboembolism in atrial fibrillation using a novel risk factor-based approach: the Euro Heart Survey. <em>Chest</em> 2010;137:263–72.</li>
+        <li>Friberg L, Rosenqvist M, Lip GYH. Evaluation of risk stratification schemes for ischaemic stroke and bleeding in atrial fibrillation. <em>Circulation</em> 2012;125:2298–307.</li>
+        <li>O’Brien EC, Simon DN, Thomas LE, et al. The ORBIT bleeding score: a simple bedside score to assess bleeding risk in atrial fibrillation. <em>Eur Heart J</em> 2015;36:3258–64.</li>
+        <li>Lopes LC, Spencer FA, Neumann I, et al. Systematic review of observational studies assessing bleeding risk in patients with atrial fibrillation not using anticoagulants. <em>PLoS One</em> 2014;9:e88131.</li>
+        <li>Connolly SJ, Ezekowitz MD, Yusuf S, et al. Dabigatran versus warfarin in patients with atrial fibrillation. <em>N Engl J Med</em> 2009;361:1139–51.</li>
+        <li>Patel MR, Mahaffey KW, Garg J, et al. Rivaroxaban versus warfarin in nonvalvular atrial fibrillation. <em>N Engl J Med</em> 2011;365:883–91.</li>
+        <li>Granger CB, Alexander JH, McMurray JJV, et al. Apixaban versus warfarin in patients with atrial fibrillation. <em>N Engl J Med</em> 2011;365:981–92.</li>
+        <li>Giugliano RP, Ruff CT, Braunwald E, et al. Edoxaban versus warfarin in patients with atrial fibrillation. <em>N Engl J Med</em> 2013;369:2093–104.</li>
+        <li>Lip GYH, Banerjee A, Boriani G, et al. Antithrombotic therapy for atrial fibrillation: CHEST guideline and expert panel report. <em>Chest</em> 2018;154:1121–201.</li>
+      </ol>
+
+      <footer>
+        © 2026 Prabhath Fernando MBBS MD FRCP. All rights reserved.<br>
+        This governance document supports transparent, auditable clinical use of the associated digital tool. It does not replace local or national guidance.
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>
